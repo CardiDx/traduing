@@ -1,0 +1,150 @@
+.home {
+  padding-top: 24rem;
+  padding-bottom: 12rem;
+
+  @include bp-md {
+    padding-top: 10.4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.home--padding-top {
+  @include bp-lg {
+    padding-top: 30.4rem;
+    transition: padding-top $motion-m ease-in-out;
+  }
+}
+
+.home__inner {
+  @include section-inner;
+}
+
+.home__content {
+  display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  position: relative;
+}
+
+.home__heading {
+  padding-top: 12rem;
+  max-width: 72rem;
+
+  @include bp-md {
+    margin-bottom: 4rem;
+  }
+}
+
+.home__title {
+  font-size: 6rem;
+  line-height: 130%;
+  color: $color-white;
+  margin-bottom: 8rem;
+
+  @include bp-md {
+    font-size: 3.2rem;
+  }
+}
+
+.home__title-top {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home__title--animate {
+  animation: titleflip 6s ease-in-out infinite;
+  max-height: 108px;
+
+  @include bp-md {
+    animation: titleflipMobile 6s ease-in-out infinite;
+    max-height: 3.2rem;
+  }
+}
+
+.home__title--animate,
+.home__title--animate li {
+  height: 13.5rem;
+
+  @include bp-md {
+    height: 3.2rem;
+  }
+}
+
+.home__title--animate li {
+  position: relative;
+  height: 1em !important;
+}
+
+.home__desc-wrap {
+  max-width: 30rem;
+  padding: 3.2rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 19rem;
+    height: 0.1rem;
+    background-color: $color-white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 19rem;
+    height: 0.1rem;
+    background-color: $color-white;
+  }
+}
+
+.home__description {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+
+  color: $color-medium-emphasis;
+
+  @include bp-md {
+    font-size: 1.4rem;
+  }
+}
+
+.home__image {
+  position: relative;
+}
+
+.home__src {
+  position: absolute;
+  top: 12rem;
+  left: -300px;
+  width: 870px;
+  max-width: 870px;
+}
+
+.home__button {
+  position: absolute;
+  background-color: $color-white;
+  text-align: center;
+  width: 24rem;
+  height: 8.8rem;
+  bottom: 0;
+  right: -11.8rem;
+}
+
+.social-links {
+  position: absolute;
+  border-radius: 99rem;
+  border: 0.1rem solid $color-white;
+  right: 0;
+}
+
+.home__background-svg {
+  display: block;
+  width: 60.2rem;
+  height: 100%;
+}

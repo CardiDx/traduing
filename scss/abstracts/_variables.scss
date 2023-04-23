@@ -1,0 +1,62 @@
+// Breakpoints
+
+$screen-xxl: 1620px;
+$screen-xl: 1460px;
+$screen-l: 1160px;
+$screen-m: 992px;
+$screen-s: 768px;
+$screen-xs: 480px;
+
+// Type
+$type-family: "Racama", sans-serif;
+$type-family--alt: "Roboto", sans-serif;
+$type-weight: 400;
+$type-weight--bold: 700;
+
+// Colors
+
+$color-gradient: linear-gradient(180deg, #ffad33 0%, #fe3075 100%);
+
+$color-primary-200: #ffdead;
+$color-primary-500: #ffad33;
+
+$color-high-emphasis: rgba(255, 255, 255, 0.87);
+$color-medium-emphasis: rgba(255, 255, 255, 0.6);
+$color-disabled-emphasis: rgba(255, 255, 255, 0.38);
+
+$color-black-high-emphasis: rgba(0, 0, 0, 0.87);
+$color-black-medium-emphasis: rgba(0, 0, 0, 0.6);
+$color-black-disabled-emphasis: rgba(0, 0, 0, 0.38);
+
+$color-black: #000000;
+$color-white: #fff;
+
+$color-backgorund: #000;
+$color-secondary-500: #fff;
+$color-primary-700: #fff;
+$color-surface: #fff;
+$color-divider: #fff;
+$color-surface-hover: #fff;
+// Indents
+
+$indent-xs: 0.4rem;
+$indent-s: 0.8rem;
+$indent-m: 1.6rem;
+$indent-l: 2.4rem;
+$indent-xl: 3.2rem;
+$indent-xxl: 4.8rem;
+$indent-xxxl: 6.4rem;
+
+// Transition
+
+$motion-s: 0.1s;
+$motion-m: 0.2s;
+$motion-l: 0.3s;
+
+// Ui size
+
+$ui-size-xs: 1.6rem;
+$ui-size-s: 2.4rem;
+$ui-size-m: 3.2rem;
+$ui-size-l: 4rem;
+$ui-size-xl: 4.8rem;

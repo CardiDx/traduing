@@ -1,0 +1,31 @@
+.scroll-up {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-backgorund;
+  position: fixed;
+  right: 4rem;
+  bottom: 4rem;
+  z-index: 99;
+  border-radius: 99rem;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform $motion-m ease-in-out;
+  cursor: pointer;
+}
+
+.scroll-up__icon {
+  background-color: $color-white;
+
+  &:hover {
+    background-color: $color-secondary-500;
+  }
+}
+
+.scroll-up--show {
+  opacity: 1;
+  transform: translateY(0);
+}

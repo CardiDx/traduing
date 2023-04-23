@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+  padding: 3.2rem;
+  color: $color-black;
+  font-size: 1.8rem;
+  font-family: $type-family;
+  line-height: 100%;
+  font-feature-settings: "salt" on, "liga" off;
+  position: relative;
+  cursor: pointer;
+  transition: background-color, box-shadow $motion-m ease-in-out;
+  gap: 1.2rem;
+
+  @include bp-sm {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $color-primary-700;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: $color-primary-500;
+  }
+}
+
+.button__icon {
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.8rem;
+  position: relative;
+  top: -3px;
+}

@@ -1,0 +1,88 @@
+@mixin bp-xxl {
+  @media only screen and (max-width: $screen-xxl) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media only screen and (max-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media only screen and (max-width: $screen-l) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media only screen and (max-width: $screen-m) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  @media only screen and (max-width: $screen-s) {
+    @content;
+  }
+}
+
+@mixin bp-xs {
+  @media only screen and (max-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin bp-custom($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin section-inner {
+  width: 100%;
+  max-width: $screen-xxl - 20px;
+  padding: 0 8rem;
+  margin: 0 auto;
+  // background-color: rgba(67, 255, 100, 0.06);
+
+  @include bp-xxl {
+    max-width: $screen-xl - 20px;
+  }
+
+  @include bp-xl {
+    max-width: $screen-l - 20px;
+  }
+
+  @include bp-lg {
+    max-width: $screen-m - 20px;
+  }
+
+  @include bp-md {
+    max-width: $screen-s - 20px;
+  }
+
+  @include bp-sm {
+    max-width: 100%;
+    padding: 0 $indent-l;
+  }
+}
+
+@mixin link-events {
+  &:active,
+  &:focus,
+  &:visited {
+    @content;
+  }
+}
+
+.font-body {
+  font-family: $type-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.7px;
+  text-transform: uppercase;
+}

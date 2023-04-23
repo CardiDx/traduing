@@ -1,0 +1,52 @@
+.cta {
+}
+.cta__inner {
+  @include section-inner;
+}
+
+.cta__heading {
+  margin-bottom: 0;
+}
+.cta__heading-title {
+  margin-bottom: 6.4rem;
+
+  @include bp-md {
+    margin-top: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+.heading__title {
+}
+.cta__content {
+}
+.cta__image-container {
+  display: flex;
+  align-items: flex-start;
+
+  @include bp-md {
+    flex-direction: column;
+  }
+}
+.cta__picture {
+  flex-shrink: 0;
+  @include bp-md {
+    width: 100%;
+    margin: 0 auto;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+}
+.cta__image {
+  @include bp-md {
+    width: 100%;
+    max-height: 19.4rem;
+    object-fit: contain;
+  }
+}
+.text {
+}
+.cta__text {
+}
+.button {
+}

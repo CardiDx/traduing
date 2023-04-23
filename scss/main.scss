@@ -1,0 +1,34 @@
+@import "/node_modules/magnific-popup/dist/magnific-popup.css";
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "vendors/reset";
+
+@import "base/typography";
+@import "base/base";
+@import "base/helpers";
+
+@import "layout/l-layout";
+
+@import "components/common/c-icon";
+@import "components/common/c-button";
+
+@import "components/common/c-header";
+
+@import "components/common/c-heading";
+@import "components/common/c-accordion";
+@import "components/common/c-popup";
+@import "components/common/c-select";
+
+@import "components/home/c-home";
+@import "components/home/c-technology";
+@import "components/home/c-services";
+@import "components/home/c-price";
+@import "components/home/c-steps-work";
+
+@import "components/home/c-cta";
+@import "components/home/c-faq";
+
+@import "components/common/c-social";
+@import "components/common/c-footer";

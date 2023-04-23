@@ -1,0 +1,100 @@
+.select {
+  position: relative;
+  outline: none;
+}
+
+.select__current-language {
+  display: flex;
+  align-items: center;
+  color: $color-high-emphasis;
+  margin-left: 4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+
+  @include bp-lg {
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    margin-right: 0;
+    margin-top: $indent-l;
+  }
+
+  &:hover {
+    color: $color-primary-200;
+
+    .select__current-language-icon {
+      background-color: $color-primary-200;
+    }
+  }
+}
+
+.select__current-language-icon {
+  width: 1rem;
+  height: 1.6rem;
+  margin-left: 0.8rem;
+  background-color: #c6c6c6;
+  transition: transform $motion-m ease-in-out;
+}
+
+.select__dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-surface;
+  padding: 0.4rem 0;
+  border-radius: 0.4rem;
+  position: absolute;
+  top: 3.2rem;
+  left: -10px;
+  z-index: 2;
+  opacity: 0;
+
+  @include bp-lg {
+    left: 1.6rem;
+  }
+
+  &::after {
+    content: url("/img/icons/rectangle.svg");
+    position: absolute;
+    right: 0.7rem;
+    top: -1.4rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    z-index: 1;
+  }
+}
+
+.select__menu-item {
+  width: 5.5rem;
+  // font-weight: $type-weight--semi-bold;
+  font-size: 1.4rem;
+  color: $color-high-emphasis;
+  line-height: 1.7rem;
+  padding: 0.4rem 0 0.4rem 1rem;
+  transition: background-color $indent-m ease-in-out,
+    color $indent-m ease-in-out;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-200;
+    color: white;
+  }
+}
+
+.select__language-checkbox {
+  visibility: hidden;
+  position: absolute;
+}
+
+.select__language-checkbox:checked ~ span {
+  color: $color-primary-200;
+}
+
+.select__language-checkbox:checked ~ .select__dropdown-menu {
+  opacity: 1;
+}
+
+.select__language-checkbox:checked ~ .select__current-language-icon {
+  transform: rotate(180deg);
+  background-color: $color-primary-200;
+}

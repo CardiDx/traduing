@@ -1,0 +1,131 @@
+.br-mob {
+  display: none;
+  @include bp-md {
+    display: block;
+  }
+}
+
+.popup {
+  position: relative;
+  width: 98%;
+  max-width: 95rem;
+  padding: 8rem;
+  margin: 0 auto;
+  background: $color-surface;
+  border-radius: 2.4rem;
+
+  @include bp-md {
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+  }
+}
+
+.mfp-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: inline-block;
+  width: 9.6rem;
+  height: 9.6rem;
+  font-size: 0;
+  line-height: 0;
+  opacity: 1;
+  background: url("/img/icons/popup-close.svg") 50% 50% no-repeat !important;
+
+  @include bp-md {
+    top: 1.6rem;
+    right: 1.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+}
+
+.popup-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+
+  @include bp-md {
+    align-items: flex-start;
+  }
+}
+
+.popup-content--wide {
+  max-width: 41rem;
+}
+
+.popup__svg {
+  margin-bottom: 2rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.popup__title {
+  margin-bottom: 6rem;
+  font-family: $type-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.6rem;
+  line-height: 140%;
+  color: $color-white;
+
+  @include bp-md {
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    line-height: 0.8;
+  }
+}
+
+.popup__title--mb15 {
+  margin-bottom: 1.6rem;
+}
+
+.popup__subtitle {
+  font-family: $type-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: $color-primary-200;
+
+  @include bp-md {
+    font-size: 1.2rem;
+  }
+}
+
+.popup-form {
+}
+
+.popup__input {
+  margin-bottom: 2.4rem;
+  width: 100%;
+  height: 5rem;
+  padding: 1.6rem 2rem 1.6rem;
+  background-color: #303141;
+
+  font-family: $type-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  color: $color-white;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  height: 5rem;
+
+  @include bp-md {
+    margin-bottom: 2rem;
+    padding: 1rem 1.6rem;
+  }
+}
+
+.popup__btn.button {
+  width: 100%;
+}

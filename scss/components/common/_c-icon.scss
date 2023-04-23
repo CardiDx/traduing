@@ -1,0 +1,50 @@
+.icon {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: $color-black;
+  mask: no-repeat center center;
+  -webkit-mask: no-repeat center center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  transition: background-color $motion-m ease-in-out;
+
+  &:hover {
+    color: $color-black;
+  }
+  // variants
+
+  &--double-arrow {
+    mask-image: url(/img/icons/double-arrow.svg);
+    -webkit-mask-image: url(/img/icons/double-arrow.svg);
+  }
+
+  &--whatsapp {
+    mask-image: url(/img/icons/whatsapp.svg);
+    -webkit-mask-image: url(/img/icons/whatsapp.svg);
+  }
+
+  &--telegram {
+    mask-image: url(/img/icons/telegram.svg);
+    -webkit-mask-image: url(/img/icons/telegram.svg);
+  }
+
+  &--inst {
+    mask-image: url(/img/icons/inst.svg);
+    -webkit-mask-image: url(/img/icons/inst.svg);
+  }
+
+  &--plus {
+    mask-image: url(/img/icons/plus.svg);
+    -webkit-mask-image: url(/img/icons/plus.svg);
+  }
+
+  &--minus {
+    mask-image: url(/img/icons/minus.svg);
+    -webkit-mask-image: url(/img/icons/minus.svg);
+  }
+}
+
+.icon--rotate {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,24 @@
+.l-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-layout__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.l-layout__body {
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 0;
+}
+
+.l-layout__footer {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 0;
+}

@@ -5,10 +5,9 @@
   transition-duration: $motion-l;
   cursor: pointer;
   border: 1px solid $color-white;
-  // margin-bottom: 3.2rem;
 
   @include bp-md {
-    margin-bottom: 1.6rem;
+    // margin-bottom: 1.6rem;
   }
 
   &:hover .accordion__header-icon {
@@ -18,7 +17,7 @@
 
 .accordion__header {
   position: relative;
-  padding: 3.2rem;
+  padding: 2.4rem;
   z-index: 4;
   width: 100%;
   display: flex;
@@ -26,19 +25,19 @@
 
   @include bp-md {
     align-items: center;
+    padding: 1.6rem;
   }
 }
 
 .accordion__header-text {
-  font-weight: 600;
-  font-size: 22px;
+  font-size: 2.2rem;
   line-height: 4rem;
   color: $color-primary-200;
 
   @include bp-md {
     padding-right: $indent-m;
-    font-size: 1.8rem;
-    line-height: 140%;
+    font-size: 1.4rem;
+    line-height: 130%;
   }
 }
 
@@ -50,10 +49,12 @@
   width: 4rem;
   height: 4rem;
   background-color: $color-white;
-}
+  transition: transform 0.3s ease-in-out;
 
-.accordion__header-icon::before {
-  transform: rotate(90deg);
+  @include bp-md {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 
 .accordion__content {
@@ -64,10 +65,14 @@
   transition-property: opacity;
   transition-duration: $motion-l;
   color: $color-high-emphasis;
-  font-family: $type-family--alt;
+  font-family: $type-family;
 
   p {
-    margin: 1.6rem 0;
+    margin-bottom: 1.6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include bp-md {
@@ -89,11 +94,11 @@
 
   &:checked {
     ~ .accordion__header {
-      padding-bottom: 1.6rem;
+      border-bottom: 0.1rem solid $color-white;
     }
 
-    + .accordion__header .accordion__header-icon:before {
-      opacity: 0;
+    + .accordion__header .accordion__header-icon {
+      transform: rotate(45deg);
     }
 
     ~ .accordion__content {
@@ -101,10 +106,10 @@
       position: relative;
       visibility: visible;
       opacity: 1;
-      padding: 0 9.6rem 3.2rem 3.2rem;
+      padding: 2.4rem;
 
       @include bp-md {
-        padding-right: 3.2rem;
+        padding-right: 2.4rem;
       }
     }
   }

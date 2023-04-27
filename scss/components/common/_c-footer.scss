@@ -27,6 +27,25 @@
   margin-bottom: 6rem;
 }
 
+.footer__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2.4rem;
+
+  @include bp-md {
+    flex-direction: column;
+  }
+}
+
+.footer__menu {
+  @include bp-md {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.4rem;
+  }
+}
+
 .footer__heading-title {
   margin-bottom: 3.2rem;
 }
@@ -63,6 +82,7 @@
 
   @include bp-md {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   &::after {
@@ -105,12 +125,38 @@
   margin-bottom: $indent-s;
 }
 
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+}
+
+.footer__link {
+  font-size: 1.6rem;
+  line-height: 3rem;
+
+  @include bp-md {
+    font-size: 1.4rem;
+  }
+}
+
+.footer__dev {
+  letter-spacing: normal;
+  color: $color-medium-emphasis;
+  line-height: 130%;
+  margin-top: 3.2rem;
+
+  @include bp-md {
+    font-size: 1.2rem;
+  }
+}
+
 .footer__copyright {
-  font-family: $type-family--alt;
+  letter-spacing: normal;
 
   @include bp-md {
     text-align: center;
     line-height: 130%;
-    margin: 3.2rem 0;
+    margin: 1.6rem 0;
   }
 }

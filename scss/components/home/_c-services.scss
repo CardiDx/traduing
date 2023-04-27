@@ -1,6 +1,11 @@
 .services {
   padding-top: 24rem;
   padding-bottom: 12rem;
+
+  @include bp-md {
+    padding-top: 6.4rem;
+    padding-bottom: 0;
+  }
 }
 
 .services__inner {
@@ -82,10 +87,17 @@
 
 .services__heading {
   margin-bottom: 6rem;
+  @include bp-md {
+    margin-bottom: 3.2rem;
+  }
 }
 
 .services__title--mwidth {
   padding-right: 18rem;
+
+  @include bp-md {
+    padding-right: 0;
+  }
 }
 
 .services__card-image {
@@ -102,6 +114,10 @@
 
 .services__wrapper-text {
   width: 50%;
+
+  @include bp-md {
+    width: 100%;
+  }
 }
 
 .services__desc {
@@ -115,5 +131,10 @@
 
 .chart {
   width: 50%;
+  height: 400px;
   background-color: #1e1f31;
+
+  @include bp-md {
+    width: 100%;
+  }
 }

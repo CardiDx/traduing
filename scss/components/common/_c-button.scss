@@ -11,7 +11,7 @@
   font-feature-settings: "salt" on, "liga" off;
   position: relative;
   cursor: pointer;
-  transition: background-color, box-shadow $motion-m ease-in-out;
+  transition: background-color, color, box-shadow $motion-m ease-in-out;
   gap: 1.2rem;
 
   @include bp-sm {
@@ -19,17 +19,20 @@
   }
 
   &:hover {
-    background-color: $color-primary-700;
+    color: $color-primary-500;
+
+    .button__icon {
+      background-color: $color-primary-500;
+    }
+  }
+
+  &:active,
+  &:visited {
+    color: $color-black;
   }
 
   &:focus {
     outline: none;
-  }
-
-  &:hover,
-  &:active,
-  &:visited {
-    color: $color-primary-500;
   }
 }
 
@@ -38,5 +41,14 @@
   height: 2rem;
   line-height: 1.8rem;
   position: relative;
+  transition: color $motion-m ease-in-out;
   top: -3px;
+}
+
+.discord {
+  background-color: #586aea;
+}
+
+.telegram {
+  background-color: #29a9ea;
 }

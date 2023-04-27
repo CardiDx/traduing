@@ -88,7 +88,7 @@
   margin-bottom: 2.4rem;
 }
 
-ul li::before {
+.troubles__list li::before {
   content: "//";
   color: $color-black-disabled-emphasis;
   font-size: 2.2rem;

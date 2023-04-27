@@ -1,8 +1,10 @@
 .faq {
+  padding-top: 24rem;
   padding-bottom: 22rem;
 
   @include bp-md {
-    padding-bottom: 7.2rem;
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
   }
 }
 
@@ -12,21 +14,53 @@
 }
 
 .faq__heading {
-  text-align: center;
+}
+
+.faq__heading--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include bp-md {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .faq__content {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  margin-bottom: -3.2rem;
+  flex-flow: row nowrap;
+  gap: 10rem;
 
   @include bp-md {
-    margin-left: 0;
-    margin-right: 0;
+    flex-flow: column wrap;
+    gap: 3.2rem;
   }
+}
+
+.price__content--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 82rem;
+
+  @include bp-md {
+    max-width: 100%;
+  }
+}
+
+.price__content--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.faq__content--left {
+  flex-shrink: 0;
+  width: 100%;
 }
 
 .faq__content--left,
@@ -34,13 +68,85 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: calc(50% - 5rem);
 
   @include bp-md {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+  }
+}
+
+.price__content--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.faq__content-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.2rem;
+
+  @include bp-md {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.faq__content-price-text {
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  color: $color-primary-500;
+
+  @include bp-md {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.faq__content-footnote {
+  color: $color-medium-emphasis;
+}
+
+.faq__content-price-button {
+  width: 24rem;
+
+  @include bp-md {
+    width: 100%;
+  }
+}
+
+.faq__list {
+}
+.faq__item {
+  margin-bottom: 3.2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.faq__item-title {
+  font-size: 3.4rem;
+  line-height: 4.1rem;
+  margin-bottom: 2.4rem;
+
+  @include bp-md {
+    font-size: 1.8rem;
+    line-height: 120%;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.faq__item-desc {
+  color: $color-medium-emphasis;
+  margin-bottom: 1.6rem;
+  &:last-child {
+    margin-bottom: 0;
   }
 }

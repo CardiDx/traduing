@@ -1,11 +1,30 @@
-.steps-work__inner {
+.social {
+  padding-top: 20.5rem;
+
+  @include bp-md {
+    padding-top: 6.4rem;
+  }
+}
+
+.social__inner {
   @include section-inner;
 }
 
-.steps-work__heading {
+.social__container {
+  background-color: $color-black;
+  padding-left: 10rem;
+  padding-right: 10rem;
+
+  @include bp-md {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-.steps-work__list {
+.social__heading {
+}
+
+.social__list {
   display: flex;
 
   position: relative;
@@ -16,7 +35,7 @@
   }
 }
 
-.steps-work__list-item {
+.social__list-item {
   width: 33.3333%;
   display: flex;
   flex-direction: column;
@@ -62,7 +81,7 @@
   // }
 }
 
-.steps-work__list-item:nth-child(2) {
+.social__list-item:nth-child(2) {
   padding-top: 6.4rem;
 
   @include bp-md {
@@ -70,7 +89,7 @@
   }
 }
 
-.steps-work__list-item:nth-child(3) {
+.social__list-item:nth-child(3) {
   padding-top: 12.8rem;
 
   @include bp-md {
@@ -78,7 +97,7 @@
   }
 }
 
-.steps-work__list-item-number {
+.social__list-item-number {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -113,13 +132,13 @@
   }
 }
 
-.steps-work__list-item-number--highlighted {
+.social__list-item-number--highlighted {
   background: rgba(30, 164, 86, 0.5);
   border: 1px solid rgba(36, 238, 114, 0.74);
   opacity: 1;
 }
 
-.steps-work__list-item-text {
+.social__list-item-text {
   font-size: 24px;
   line-height: 150%;
   padding-top: 2.4rem;
@@ -130,7 +149,7 @@
   }
 }
 
-.steps-work__list-item-description {
+.social__list-item-description {
   font-family: $type-family--alt;
 
   @include bp-xl {
@@ -141,4 +160,66 @@
   @include bp-md {
     line-height: 150%;
   }
+}
+
+.social__desc {
+  color: $color-medium-emphasis;
+}
+
+.social__container-left {
+  max-width: 62rem;
+  width: 100%;
+  flex-shrink: 0;
+
+  @include bp-md {
+    max-width: 100%;
+  }
+}
+
+.social__container-right {
+  width: 100%;
+}
+
+.social__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3.2rem;
+
+  @include bp-md {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .button {
+    width: 100%;
+    color: $color-white;
+  }
+}
+
+.social__buttons-button {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.social__buttons-button.button {
+  transition: background-color 0.3s ease-in-out;
+}
+.social__buttons-button.button.discord:hover {
+  background-color: #4051cb;
+}
+.social__buttons-button.button.telegram:hover {
+  background-color: #1388c3;
+}
+.social__buttons-button.button:hover .icon {
+  background-color: $color-white;
+}
+
+.social__buttons-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.social__src {
+  margin-bottom: 3.2rem;
 }

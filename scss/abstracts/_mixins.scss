@@ -53,6 +53,7 @@
 
   @include bp-xl {
     max-width: $screen-l - 20px;
+    padding: 0 4rem;
   }
 
   @include bp-lg {
@@ -67,6 +68,11 @@
     max-width: 100%;
     padding: 0 $indent-l;
   }
+
+  @include bp-xs {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
 }
 
 @mixin link-events {
@@ -75,14 +81,4 @@
   &:visited {
     @content;
   }
-}
-
-.font-body {
-  font-family: $type-family;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.2rem;
-  line-height: 3.2rem;
-  letter-spacing: -0.7px;
-  text-transform: uppercase;
 }

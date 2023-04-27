@@ -1,6 +1,11 @@
 .price {
   padding-top: 24rem;
   padding-bottom: 24rem;
+
+  @include bp-md {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
 }
 
 .price__inner {

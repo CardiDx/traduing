@@ -22,16 +22,19 @@
   &--whatsapp {
     mask-image: url(/img/icons/whatsapp.svg);
     -webkit-mask-image: url(/img/icons/whatsapp.svg);
+    background-color: $color-white;
   }
 
   &--telegram {
     mask-image: url(/img/icons/telegram.svg);
     -webkit-mask-image: url(/img/icons/telegram.svg);
+    background-color: $color-white;
   }
 
   &--inst {
     mask-image: url(/img/icons/inst.svg);
     -webkit-mask-image: url(/img/icons/inst.svg);
+    background-color: $color-white;
   }
 
   &--plus {
@@ -40,8 +43,25 @@
   }
 
   &--minus {
-    mask-image: url(/img/icons/minus.svg);
-    -webkit-mask-image: url(/img/icons/minus.svg);
+    mask-image: url(/img/icons/degree.svg);
+    -webkit-mask-image: url(/img/icons/degree.svg);
+  }
+
+  &--shopping-cart {
+    mask-image: url(/img/icons/shopping-cart.svg);
+    -webkit-mask-image: url(/img/icons/shopping-cart.svg);
+  }
+
+  &--discord {
+    mask-image: url(/img/icons/icon-discord.svg);
+    -webkit-mask-image: url(/img/icons/icon-discord.svg);
+    background-color: $color-white;
+  }
+
+  &--tg-circle {
+    mask-image: url(/img/icons/icon-tg-circle.svg);
+    -webkit-mask-image: url(/img/icons/icon-tg-circle.svg);
+    background-color: $color-white;
   }
 }
 

@@ -204,6 +204,12 @@
   }
 }
 
+.footer .header__menu-link {
+  @include bp-md {
+    padding-left: 0;
+  }
+}
+
 .header__right-side {
   display: flex;
   align-items: center;

@@ -187,13 +187,23 @@
   gap: 3.2rem;
 
   @include bp-md {
-    flex-direction: column;
-    gap: 1.6rem;
+    gap: 16px;
   }
 
   .button {
+    align-items: center;
     width: 100%;
     color: $color-white;
+
+    @include bp-md {
+      width: calc(50% - 8px);
+      height: 68px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      font-size: 14px;
+      line-height: 1;
+    }
   }
 }
 
@@ -218,6 +228,12 @@
 .social__buttons-icon {
   width: 4.8rem;
   height: 4.8rem;
+  flex-shrink: 0;
+
+  @include bp-md {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .social__src {

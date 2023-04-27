@@ -75,6 +75,7 @@
 
   width: 80px;
   height: 80px;
+  padding-top: 10px;
   border: 1px solid #ffffff;
   background: #000000;
   border-radius: 40px;
@@ -150,7 +151,9 @@
   height: 64px;
   margin: 0 0 24px;
   padding: 1px;
-  background: url("/img/input-border.svg") 50% 50% / cover no-repeat;
+  //background: url("/img/input-border.svg") 50% 50% / cover no-repeat;
+  background: url("/img/input-border.png") 50% 50% / 100% 100% no-repeat;
+  //background-size: 100% 100%;
 }
 
 .currency-form__input,
@@ -162,11 +165,12 @@
   height: 100%;
   padding: 22px 20px;
 
-  background: linear-gradient(
-    91.73deg,
-    rgba(217, 217, 217, 0.15) 0%,
-    rgba(217, 217, 217, 0.02) 100%
-  );
+  background: none;
+  //background: linear-gradient(
+  //  91.73deg,
+  //  rgba(217, 217, 217, 0.15) 0%,
+  //  rgba(217, 217, 217, 0.02) 100%
+  //);
   border: none;
   outline: none;
 
@@ -200,6 +204,10 @@
   letter-spacing: 0.1px;
   text-transform: uppercase;
   color: #000000;
+
+  @include bp-md {
+    height: 64px;
+  }
 }
 
 .currency-pip {
@@ -255,7 +263,8 @@
   color: rgba(255, 255, 255, 0.87);
 
   @include bp-md {
-    margin-top: 4.8rem;
+    margin-top: 4rem;
+    font-size: 1.4rem;
   }
 
   & .--accent {

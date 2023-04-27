@@ -87,6 +87,7 @@
   position: absolute;
   top: 24rem;
   right: 0;
+  z-index: -1;
 
   @include bp-md {
     position: unset;

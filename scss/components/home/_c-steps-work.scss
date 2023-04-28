@@ -21,9 +21,6 @@
   }
 }
 
-.social__heading {
-}
-
 .social__list {
   display: flex;
 
@@ -150,8 +147,6 @@
 }
 
 .social__list-item-description {
-  font-family: $type-family--alt;
-
   @include bp-xl {
     font-size: 1.6rem;
     line-height: 140%;
@@ -210,6 +205,10 @@
 .social__buttons-button {
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @include bp-md {
+    padding-top: 2.4rem;
+  }
 }
 
 .social__buttons-button.button {

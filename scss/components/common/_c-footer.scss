@@ -115,12 +115,6 @@
   }
 }
 
-.footer__social-wrapper {
-  // @include bp-lg {
-  //   margin-top: 4rem;
-  // }
-}
-
 .footer__social-wrapper-title {
   margin-bottom: $indent-s;
 }
@@ -141,14 +135,12 @@
 }
 
 .footer__dev {
+  text-align: center;
   letter-spacing: normal;
   color: $color-medium-emphasis;
   line-height: 130%;
   margin-top: 3.2rem;
-
-  @include bp-md {
-    font-size: 1.2rem;
-  }
+  font-size: 1.2rem;
 }
 
 .footer__copyright {

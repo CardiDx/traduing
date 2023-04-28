@@ -11,7 +11,7 @@
   font-feature-settings: "salt" on, "liga" off;
   position: relative;
   cursor: pointer;
-  transition: background-color, color, box-shadow $motion-m ease-in-out;
+  transition: background-color, color, box-shadow $motion-l ease-in-out;
   gap: 1.2rem;
 
   @include bp-sm {

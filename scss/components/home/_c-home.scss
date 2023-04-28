@@ -132,8 +132,8 @@
   position: relative;
 
   @include bp-md {
-    margin-left: -1.8rem;
-    margin-right: -1.8rem;
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
   }
 }
 
@@ -275,5 +275,11 @@
   @include bp-md {
     width: 2rem;
     height: 2rem;
+  }
+}
+
+.social-link:hover {
+  .home__social-links-icon {
+    background-color: $color-primary-500;
   }
 }

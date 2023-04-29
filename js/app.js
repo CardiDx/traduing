@@ -71,3 +71,30 @@ $(".show-thank-you").magnificPopup({
   mainClass: "my-mfp-slide-bottom",
   fixedContentPos: true,
 });
+
+
+// chart
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [0, 3, 8, 12, 14, 19, 24, 28],
+    datasets: [{
+      // label: false,
+      data: [102000, 101500, 103000, 102000, 103000, 105000, 106000, 110000],
+      borderColor : "#FFAD33",
+      // fill: true,
+      // fillColor: "#ff0000",
+      borderWidth: 2,
+      lineTension: 0.3,
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: false
+      }
+    }
+  }
+});

@@ -4,7 +4,7 @@
 
   @include bp-md {
     padding-top: 6.4rem;
-    padding-bottom: 0;
+    padding-bottom: 6.4rem;
   }
 }
 
@@ -128,12 +128,135 @@
   }
 }
 
-.chart {
+.wrap-chart {
   width: 50%;
-  //height: 400px;
-  //background-color: #1e1f31;
 
   @include bp-md {
     width: 100%;
+  }
+}
+
+.chart {
+  padding-bottom: 4.8rem;
+  padding-left: 10.7rem;
+  position: relative;
+
+  @include bp-xs {
+    padding-bottom: 2.4rem;
+    padding-left: 7.2rem;
+  }
+}
+
+.chart__title {
+  color: $color-high-emphasis;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.numbers {
+  display: flex;
+  color: $color-medium-emphasis;
+  position: absolute;
+
+  &--row {
+    flex-direction: row;
+    justify-content: space-between;
+    bottom: 0;
+    right: 0;
+    left: 10.7rem;
+
+    @include bp-xs {
+      left: 7.2rem;
+    }
+  }
+  &--column {
+    flex-direction: column;
+    left: 0;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 5rem;
+    padding-top: 3.2rem;
+
+    @include bp-xs {
+      padding-top: 1.6rem;
+    }
+  }
+}
+
+.numbers--column .number {
+  width: 7rem;
+}
+
+.numbers--row .number {
+  width: 2.6rem;
+  text-align: center;
+}
+
+.number {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.1rem;
+
+  @include bp-xs {
+    font-size: 1rem;
+  }
+}
+
+.svg-chart {
+  position: relative;
+}
+
+.path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart__line {
+  stroke-dasharray: 1850 2000;
+  stroke-dashoffset: 1851;
+  animation: dash 10s linear forwards;
+}
+
+.chart__percent-opcity {
+  animation: opacity 6s linear;
+}
+
+.chart__line-col {
+  animation: show 3s linear;
+}
+
+.chart__bg {
+  animation: opacity 3s linear;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  100% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }

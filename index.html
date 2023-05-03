@@ -348,29 +348,52 @@
                                 </div>
                             </div>
                             <div class="currency-form">
-                                <label for="currency" class="currency-form__label">Currency pair</label>
-                                <div class="currency-form__input-wrapper">
-                                    <input type="text" name="currency" id="currency" class="currency-form__input" placeholder="EUR/USD">
+<!--                                <label for="currencyPair" class="currency-form__label">Currency pair</label>-->
+<!--                                <div class="currency-form__input-wrapper">-->
+<!--                                    <input type="text" name="currency" id="currencyPair" class="currency-form__input" placeholder="EUR/USD">-->
+<!--                                </div>-->
+                                <label class="currency-form__label">Account currency</label>
+                                <div id="currencyPair" class="currency-form__input-wrapper">
+                                    <select>
+                                        <option class="cs-selector-label">Choose one</option>
+                                        <option value="1" selected="selected">EUR/USD</option>
+                                        <option value="2">GBP/USD</option>
+                                        <option value="3">USD/CHF</option>
+                                        <option value="4">USD/CAD</option>
+                                    </select>
                                 </div>
-                                <label for="price" class="currency-form__label">ask price</label>
+                                <label for="askPrice" class="currency-form__label">ask price</label>
                                 <div class="currency-form__input-wrapper">
-                                    <input type="text" name="currency" id="price" class="currency-form__input" placeholder="1,091595">
+                                    <input type="text" name="currency" id="askPrice" class="currency-form__input" placeholder="1,091595" disabled>
                                 </div>
-                                <label for="units" class="currency-form__label">Position Size (units)</label>
+                                <label for="positionSize" class="currency-form__label">Position Size (units)</label>
                                 <div class="currency-form__input-wrapper">
-                                    <input type="text" name="currency" id="units" class="currency-form__input" placeholder="0">
+                                    <input type="number" name="currency" id="positionSize" class="currency-form__input" placeholder="1" value="1" min="1">
                                 </div>
-                                <label for="account-currency" class="currency-form__label">Account currency</label>
-                                <div class="currency-form__input-wrapper">
-                                    <input type="text" name="currency" id="account-currency" class="currency-form__input" placeholder="USD">
+<!--                                <label for="accountCurrency" class="currency-form__label">Account currency</label>-->
+<!--                                <div class="currency-form__input-wrapper">-->
+<!--                                    <input type="text" name="currency" id="accountCurrency" class="currency-form__input" placeholder="USD" value="USD">-->
+<!--                                </div>-->
+
+                                <label class="currency-form__label">Account currency</label>
+                                <div id="accountCurrency" class="currency-form__input-wrapper">
+                                    <select>
+                                        <option class="cs-selector-label">Choose one</option>
+                                        <option value="1" selected="selected">USD</option>
+                                        <option value="2">EUR</option>
+                                        <option value="3">JPY</option>
+                                        <option value="4">GBP</option>
+                                    </select>
                                 </div>
-                                <button type="submit" class="currency-form__btn button" aria-label="Aria Calculate">Рассчитать</button>
+
+
+                                <button id="calculate" class="currency-form__btn button" aria-label="Aria Calculate">Рассчитать</button>
 
                             </div>
                         </div>
                         <div class="currency-pip">
                             <span class="currency-pip__title">Pip value:</span>
-                            <span class="currency-pip__value">0,0002</span>
+                            <span id="pipOutput" class="currency-pip__value">0,0002</span>
                         </div>
                         <span class="currency-current">текущий курс $ — <span class="--accent">81,87₽</span></span>
                     </div>

@@ -98,3 +98,119 @@
   transform: rotate(180deg);
   background-color: $color-primary-200;
 }
+
+
+// CUSTOM SELECT
+.cs-selector {
+  --selectedBackground: #e0e0e0;
+  --selectedColor: #000;
+  width: 100%;
+  height: 100%;
+  //background: #FFF;
+  background: none;
+  cursor: pointer;
+  &[data-selected='1'] .cs-options-list .cs-option:nth-child(2) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected='2'] .cs-options-list .cs-option:nth-child(3) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected='3'] .cs-options-list .cs-option:nth-child(4) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected='4'] .cs-options-list .cs-option:nth-child(5) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+
+  &-icon {
+    transition: .3s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s
+  }
+  &[data-active='1'] {
+    .cs-selector-icon {
+      transform: rotateZ(180deg);
+    }
+    .cs-options-list {
+      position: relative;
+      width: calc(100% + 2px);
+      left: -1px;
+      margin: 0;
+      border-radius: 0;
+      display: block;
+      animation: fadeIn;
+      background-color: #000;
+      z-index: 100;
+    }
+  }
+  &[data-active='0'] .cs-options-list, select {
+    display: none;
+  }
+  user-select: none;
+}
+
+.cs {
+  &-selected-box {
+    width: 100%;
+    height: 100%;
+    padding: .8em 1.2em;
+    //background: #FFF;
+    background: none;
+    //color: #595959;
+    color: #ffffff;
+    border-radius: 5px;
+    //border: .5px solid #bfbfbf;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-selected-option {
+    width: calc(100% - 40px);
+    height: 100%;
+    color: #fff;
+    vertical-align: middle;
+    display: contents;
+  }
+  &-selector-icon {
+    width: 20px;
+    height: 20px;
+    & svg {
+      width: 100%;
+      height: auto;
+      stroke: #ffffff;
+      stroke-width: 1px;
+    }
+  }
+  &-options-list {
+    border: .5px solid #bfbfbf;
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  &-selector-label {
+    display: none;
+  }
+  &-option {
+    //color: #595959;
+    color: #ffffff;
+    padding: .9em 1.3em;
+    transition: .2s ease;
+    font-weight: 400;
+    &:not(:last-child) {
+      border-bottom: 0;
+    }
+    &:last-child {
+
+    }
+  }
+}

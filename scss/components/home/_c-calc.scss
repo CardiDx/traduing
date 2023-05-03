@@ -180,6 +180,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+input.currency-form__input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
 .currency-form__input::placeholder {
   color: grey;

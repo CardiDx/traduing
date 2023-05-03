@@ -20,17 +20,17 @@
     line-height: 1;
   }
 
+  &:active,
+  &:visited {
+    color: $color-black;
+  }
+
   &:hover {
     color: $color-primary-500;
 
     .button__icon {
       background-color: $color-primary-500;
     }
-  }
-
-  &:active,
-  &:visited {
-    color: $color-black;
   }
 
   &:focus {

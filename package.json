@@ -13,6 +13,7 @@
     "simplebar": "^5.3.8"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "chart.js": "^4.2.1",
     "gulp-minify-html": "^1.0.6",
     "gulp-open": "^2.0.0",

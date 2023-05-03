@@ -73,24 +73,50 @@
     object-fit: contain;
   }
 }
-.text {
-}
-.cta__text {
-}
-.button {
-}
+// .text {
+// }
+// .cta__text {
+// }
+// .button {
+// }
 
-.cta__image-container {
-}
+// .cta__image-container {
+// }
 
 .cta__src {
   position: absolute;
   top: 24rem;
-  right: 0;
+  right: -4rem;
   z-index: -1;
+
+  @include bp-xxl {
+    right: -20rem;
+  }
+
+  @include bp-xl {
+    width: 64rem;
+    right: 0;
+  }
 
   @include bp-md {
     position: unset;
     top: auto;
+  }
+
+  &--animate {
+    animation: fadeLeft 0.5s linear forwards;
+
+    @include bp-lg {
+      animation: none;
+    }
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    transform: translateX(25%);
+  }
+  to {
+    transform: translateX(-10%);
   }
 }

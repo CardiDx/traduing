@@ -99,7 +99,6 @@
   background-color: $color-primary-200;
 }
 
-
 // CUSTOM SELECT
 .cs-selector {
   --selectedBackground: #e0e0e0;
@@ -109,27 +108,27 @@
   //background: #FFF;
   background: none;
   cursor: pointer;
-  &[data-selected='1'] .cs-options-list .cs-option:nth-child(2) {
+  &[data-selected="1"] .cs-options-list .cs-option:nth-child(2) {
     background: var(--selectedBackground);
     color: var(--selectedColor);
   }
-  &[data-selected='2'] .cs-options-list .cs-option:nth-child(3) {
+  &[data-selected="2"] .cs-options-list .cs-option:nth-child(3) {
     background: var(--selectedBackground);
     color: var(--selectedColor);
   }
-  &[data-selected='3'] .cs-options-list .cs-option:nth-child(4) {
+  &[data-selected="3"] .cs-options-list .cs-option:nth-child(4) {
     background: var(--selectedBackground);
     color: var(--selectedColor);
   }
-  &[data-selected='4'] .cs-options-list .cs-option:nth-child(5) {
+  &[data-selected="4"] .cs-options-list .cs-option:nth-child(5) {
     background: var(--selectedBackground);
     color: var(--selectedColor);
   }
 
   &-icon {
-    transition: .3s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s
+    transition: 0.3s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s;
   }
-  &[data-active='1'] {
+  &[data-active="1"] {
     .cs-selector-icon {
       transform: rotateZ(180deg);
     }
@@ -145,7 +144,8 @@
       z-index: 100;
     }
   }
-  &[data-active='0'] .cs-options-list, select {
+  &[data-active="0"] .cs-options-list,
+  select {
     display: none;
   }
   user-select: none;
@@ -155,7 +155,7 @@
   &-selected-box {
     width: 100%;
     height: 100%;
-    padding: .8em 1.2em;
+    padding: 0.8em 1.2em;
     //background: #FFF;
     background: none;
     //color: #595959;
@@ -188,7 +188,7 @@
     }
   }
   &-options-list {
-    border: .5px solid #bfbfbf;
+    border: 0.5px solid #bfbfbf;
     list-style: none;
     padding: 0;
     margin: 12px 0;
@@ -203,14 +203,16 @@
   &-option {
     //color: #595959;
     color: #ffffff;
-    padding: .9em 1.3em;
-    transition: .2s ease;
+    padding: 0.9em 1.3em;
+    transition: color, background-color 0.2s ease;
     font-weight: 400;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
     &:not(:last-child) {
       border-bottom: 0;
-    }
-    &:last-child {
-
     }
   }
 }

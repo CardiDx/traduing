@@ -144,6 +144,8 @@
   left: -300px;
   width: 870px;
   max-width: 870px;
+  z-index: 11;
+  opacity: 1 !important;
 
   @include bp-xl {
     width: 770px;
@@ -166,6 +168,7 @@
   height: 8.8rem;
   bottom: 12rem;
   right: -11.8rem;
+  z-index: 99;
 
   @include bp-xxl {
     right: 0;
@@ -174,6 +177,15 @@
   @include bp-md {
     bottom: -6.8rem;
     height: 6.8rem;
+    display: none;
+  }
+
+  &--mobile {
+    @include bp-md {
+      width: 100%;
+      display: flex;
+      bottom: -16rem;
+    }
   }
 }
 
@@ -188,6 +200,7 @@
   display: block;
   width: 60.2rem;
   height: 100%;
+  z-index: -1;
 
   @include bp-md {
     display: none;
@@ -228,7 +241,21 @@
   @include bp-md {
     width: calc(100% - 32px);
     height: 56px;
-    //display: none;
+    display: none;
+  }
+
+  &--mobile {
+    display: none;
+    @include bp-md {
+      display: flex;
+      height: 6.8rem;
+      width: 240px;
+      top: auto;
+      bottom: -6.8rem;
+      right: 0;
+      left: auto;
+      transform: none;
+    }
   }
 
   &::before,
@@ -246,6 +273,10 @@
       left: auto;
       transform: none;
       top: 50%;
+    }
+
+    @include bp-md {
+      display: none;
     }
   }
 

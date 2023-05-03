@@ -235,6 +235,15 @@
   }
 }
 
+.social__wrap-image {
+  @include bp-md {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .social__src {
   margin-bottom: 3.2rem;
 }

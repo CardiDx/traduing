@@ -74,30 +74,30 @@ headerLinks.forEach(function (headerLink) {
 
 
 // chart
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: [0, 3, 8, 12, 14, 19, 24, 28],
-    datasets: [{
-      // label: false,
-      data: [102000, 101500, 103000, 102000, 103000, 105000, 106000, 110000],
-      borderColor : "#FFAD33",
-      // fill: true,
-      // fillColor: "#ff0000",
-      borderWidth: 2,
-      lineTension: 0.3,
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: false
-      }
-    }
-  }
-});
+// const ctx = document.getElementById('myChart');
+//
+// new Chart(ctx, {
+//   type: 'line',
+//   data: {
+//     labels: [0, 3, 8, 12, 14, 19, 24, 28],
+//     datasets: [{
+//       // label: false,
+//       data: [102000, 101500, 103000, 102000, 103000, 105000, 106000, 110000],
+//       borderColor : "#FFAD33",
+//       // fill: true,
+//       // fillColor: "#ff0000",
+//       borderWidth: 2,
+//       lineTension: 0.3,
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: false
+//       }
+//     }
+//   }
+// });
 
 
 // MAIL
@@ -109,16 +109,52 @@ $("#main-form").submit(function (e) {
     type: "POST",
     url: "mail.php",
     data: $(this).serialize(),
-  }).done(function () {
+  })
+  .done(function () {
     $(this).find("input").val("");
 
     console.log("sent");
-    // $.magnificPopup.open({
-    //   items: {
-    //     src: "#thankyou",
-    //   },
-    //   mainClass: "mfp-letter",
-    // });
+
+    $.magnificPopup.open({
+      items: {
+        src: "#thankyou",
+      },
+      closeOnBgClick: true,
+      fixedContentPos: false,
+      callbacks: {
+        open: function() {
+          jQuery('body').addClass('noscroll');
+        },
+        close: function() {
+          jQuery('body').removeClass('noscroll');
+        }
+      },
+      removalDelay: 300,
+      mainClass: "mfp-letter my-mfp-slide-bottom",
+    });
+  })
+  .fail(function () {
+    $(this).find("input").val("");
+
+    console.log("mail error");
+
+    $.magnificPopup.open({
+      items: {
+        src: "#mail-error",
+      },
+      closeOnBgClick: true,
+      fixedContentPos: false,
+      callbacks: {
+        open: function() {
+          jQuery('body').addClass('noscroll');
+        },
+        close: function() {
+          jQuery('body').removeClass('noscroll');
+        }
+      },
+      removalDelay: 300,
+      mainClass: "mfp-letter my-mfp-slide-bottom",
+    });
   });
 
   return false;

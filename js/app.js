@@ -47,30 +47,30 @@ headerLinks.forEach(function (headerLink) {
 
 //wa parallax
 
-// popups
-
-$(document).on("click", ".show-sontact-us", function () {
-  let service = $(this).data("service");
-  $(".popup__select").val(service);
-});
-
-$(".show-sontact-us").magnificPopup({
-  items: {
-    src: ".popup--contact-us",
-  },
-  type: "inline",
-  mainClass: "my-mfp-slide-bottom",
-  fixedContentPos: true,
-});
-
-$(".show-thank-you").magnificPopup({
-  items: {
-    src: ".popup--thank-you",
-  },
-  type: "inline",
-  mainClass: "my-mfp-slide-bottom",
-  fixedContentPos: true,
-});
+// // popups
+//
+// $(document).on("click", ".show-sontact-us", function () {
+//   let service = $(this).data("service");
+//   $(".popup__select").val(service);
+// });
+//
+// $(".show-sontact-us").magnificPopup({
+//   items: {
+//     src: ".popup--contact-us",
+//   },
+//   type: "inline",
+//   mainClass: "my-mfp-slide-bottom",
+//   fixedContentPos: true,
+// });
+//
+// $(".show-thank-you").magnificPopup({
+//   items: {
+//     src: ".popup--thank-you",
+//   },
+//   type: "inline",
+//   mainClass: "my-mfp-slide-bottom",
+//   fixedContentPos: true,
+// });
 
 
 // chart
@@ -97,4 +97,29 @@ new Chart(ctx, {
       }
     }
   }
+});
+
+
+// MAIL
+$("#main-form").submit(function (e) {
+  e.preventDefault();
+  console.log("sending");
+
+  $.ajax({
+    type: "POST",
+    url: "mail.php",
+    data: $(this).serialize(),
+  }).done(function () {
+    $(this).find("input").val("");
+
+    console.log("sent");
+    // $.magnificPopup.open({
+    //   items: {
+    //     src: "#thankyou",
+    //   },
+    //   mainClass: "mfp-letter",
+    // });
+  });
+
+  return false;
 });

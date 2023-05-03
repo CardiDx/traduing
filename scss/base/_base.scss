@@ -65,6 +65,10 @@ button {
   flex-direction: row;
   gap: 10rem;
 
+  &--no-gap {
+    gap: 0 !important;
+  }
+
   @include bp-md {
     flex-direction: column;
     gap: 4rem;

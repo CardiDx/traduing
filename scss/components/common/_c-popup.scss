@@ -11,11 +11,13 @@
   max-width: 95rem;
   padding: 8rem;
   margin: 0 auto;
-  border-radius: 2.4rem;
+
+  &--thank-you {
+    background: linear-gradient(98.18deg, #ffad33 -7.38%, #fe3075 122.33%);
+  }
 
   @include bp-md {
     padding: 2.4rem;
-    border-radius: 1.2rem;
   }
 }
 
@@ -47,7 +49,9 @@
   align-items: center;
 
   width: 100%;
-  max-width: 34rem;
+  max-width: 67rem;
+  text-align: center;
+  color: $color-black-high-emphasis;
   margin: 0 auto;
 
   @include bp-md {
@@ -55,9 +59,9 @@
   }
 }
 
-.popup-content--wide {
-  max-width: 41rem;
-}
+// .popup-content--wide {
+//   max-width: 41rem;
+// }
 
 .popup__svg {
   margin-bottom: 2rem;
@@ -72,7 +76,6 @@
   font-weight: 400;
   font-size: 4.6rem;
   line-height: 140%;
-  color: $color-white;
 
   @include bp-md {
     margin-bottom: 3rem;
@@ -91,7 +94,6 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 150%;
-  color: $color-primary-200;
 
   @include bp-md {
     font-size: 1.2rem;

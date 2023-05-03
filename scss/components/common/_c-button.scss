@@ -8,7 +8,6 @@
   font-size: 1.8rem;
   font-family: $type-family;
   line-height: 100%;
-  font-feature-settings: "salt" on, "liga" off;
   position: relative;
   cursor: pointer;
   transition: background-color, color, box-shadow $motion-l ease-in-out;
@@ -45,7 +44,7 @@
   line-height: 1.8rem;
   position: relative;
   transition: color $motion-m ease-in-out;
-  top: -3px;
+  top: -2px;
 }
 
 .discord {

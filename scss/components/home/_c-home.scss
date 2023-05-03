@@ -1,6 +1,7 @@
 .home {
   padding-top: 24rem;
   padding-bottom: 12rem;
+  position: relative;
 
   @include bp-md {
     padding-top: 8.6rem;

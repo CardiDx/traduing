@@ -141,6 +141,10 @@
   line-height: 130%;
   margin-top: 3.2rem;
   font-size: 1.2rem;
+
+  @include bp-md {
+    text-align: left;
+  }
 }
 
 .footer__copyright {

@@ -325,7 +325,6 @@ $(window).scroll(function() {
 
   // анимация чарта
   if ($("#services").offset().top < topOfWindow) {
-    console.log("animate");
       $(".chart").addClass("--show");
   }
 

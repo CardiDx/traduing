@@ -17,13 +17,15 @@
   overflow: hidden;
   width: 100%;
   //height: 400px;
-  height: 308px;
+  //height: 308px;
+  height: 260px;
   position: relative;
   margin: 0 auto;
   padding: 0;
 
   @include bp-md {
-    height: 230px;
+    //height: 230px;
+    height: 180px;
   }
 }
 
@@ -33,7 +35,7 @@
   position: absolute;
 
   @include bp-md {
-    width: 400%;
+    width: 600%;
   }
 }
 
@@ -143,17 +145,17 @@
   }
 
   100% {
-    left: -200%;
+    left: -300%;
   }
 }
 
 .marquee-inner.to-left {
-  -webkit-animation: marqueeLeft 15s linear infinite;
-  animation: marqueeLeft 15s linear infinite;
+  -webkit-animation: marqueeLeft 10s linear infinite;
+  animation: marqueeLeft 10s linear infinite;
 
   @include bp-md {
-    -webkit-animation: marqueeLeftMob 10s linear infinite;
-    animation: marqueeLeftMob 10s linear infinite;
+    -webkit-animation: marqueeLeftMob 8s linear infinite;
+    animation: marqueeLeftMob 8s linear infinite;
 
   }
 }
@@ -168,7 +170,7 @@
   align-items: center;
   gap: 0px;
 
-  width: 50%;
+  width: 25%;
 
   @include bp-md {
     //width: 300vw;
@@ -208,11 +210,12 @@
 
 .marquee-grid-item__img-wrapper.--oval {
   width: 100%;
-  height: 140px;
+  //height: 140px;
+  height: 100px;
   border-radius: 99999px;
 
   @include bp-md {
-    height: 100px;
+    height: 60px;
   }
 }
 

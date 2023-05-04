@@ -317,26 +317,22 @@ $("#calculate").on("click", function () {
   $("#pipOutput").text(pipValue);
 });
 
-// animate chart
 
-let needToPlayAnimation = true;
-let i = 1;
-let timeout = 300;
 
-$(window).scroll(function () {
-  var howWorkTop = $("#services").position().top;
-  if ($(window).scrollTop() >= howWorkTop - 300) {
-    if (needToPlayAnimation) {
-      $("#chartline").addClass("chart__line");
-      $("#chartPercentCol").addClass("chart__line");
-      needToPlayAnimation = false;
-    }
+// АНИМАЦИИ ПО СКРОЛЛУ
+$(window).scroll(function() {
+  var topOfWindow = $(window).scrollTop() + $(window).innerHeight();
+
+  // анимация чарта
+  if ($("#services").offset().top < topOfWindow) {
+    console.log("animate");
+      $(".chart").addClass("--show");
+  }
+
+  // анимация руки
+  if ($("#arm-animate").offset().top < topOfWindow) {
+    $("#arm-animate").addClass("cta__src--animate");
   }
 });
-
-//animate start video
-var myVideo = document.getElementById("video-example-1");
-
-//animate arm
-
-$("#arm-animate").addClass("cta__src--animate");
+// //animate start video
+// var myVideo = document.getElementById("video-example-1");

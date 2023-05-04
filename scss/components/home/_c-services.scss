@@ -216,19 +216,37 @@
 .chart__line {
   stroke-dasharray: 1850 2000;
   stroke-dashoffset: 1851;
+}
+
+.chart.--show .chart__line {
   animation: dash 10s linear forwards;
 }
 
-.chart__percent-opcity {
+.chart__percent-opacity {
+  opacity: 0;
+}
+
+.chart.--show .chart__percent-opacity {
   animation: opacity 6s linear;
+  opacity: 1;
 }
 
 .chart__line-col {
+  transform: translateY(100%);
+}
+
+.chart.--show .chart__line-col {
   animation: show 3s linear;
+  transform: translateY(0);
 }
 
 .chart__bg {
+  opacity: 0;
+}
+
+.chart.--show .chart__bg {
   animation: opacity 3s linear;
+  opacity: 1;
 }
 
 @keyframes opacity {
@@ -246,12 +264,12 @@
 }
 
 @keyframes show {
-  100% {
-    transform: translateY(0);
+  0% {
+    transform: translateY(100%);
   }
 
-  10% {
-    transform: translateY(100%);
+  100% {
+    transform: translateY(0);
   }
 }
 

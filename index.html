@@ -186,7 +186,7 @@
                                     <path class="chart__bg path" fill-rule="evenodd" clip-rule="evenodd" d="M1 262L1 189.056C1 189.056 34.586 201.235 39.5 200.238C66.0179 194.853 112.179 164.187 127 164.187C141.821 164.187 172.435 166.691 193.5 166.691C214.565 166.691 252.296 131.9 268.405 131.9C286 125.5 314.5 117.5 334 113.116C348.891 113.116 393.5 86.9286 424 69.5C441.5 59.5 461 46.5 484.5 40C499.5 33.5 514 30 514 30V108.109V262H1Z" fill="url(#paint0_linear_138_1579)" />
                                     <path class="chart__line path" d="M1 187.593C1 187.593 27.9916 200 41 200C54.0084 200 114.179 163.5 129 163.5C143.821 163.5 173.935 166 195 166C216.065 166 241 140 268.652 131C300.5 120.634 290 123.5 340 112C356 109 411.5 75.5 431.5 65C445.394 57.7057 499 30 514 30" stroke="#FFAD33" stroke-width="2" />
                                     <path class="chart__line-col path" d="M478 39C478 34.5817 481.582 31 486 31V31C490.418 31 494 34.5817 494 39V262H478V39Z" fill="url(#paint1_linear_138_1579)" />
-                                    <rect class="chart__percent-opcity" x="464" width="46" height="22" rx="11" fill="white" />
+                                    <rect class="chart__percent-opacity" x="464" width="46" height="22" rx="11" fill="white" />
                                     <path class="path" d="M472.769 9H475.149V16H476.479V6.2H475.149V6.9C475.149 7.404 474.813 7.74 474.309 7.74H472.769V9ZM483.285 16.28C485.721 16.28 487.331 14.222 487.331 11.086C487.331 7.964 485.721 5.92 483.285 5.92C480.835 5.92 479.211 7.992 479.211 11.1C479.211 14.208 480.835 16.28 483.285 16.28ZM483.257 7.18C485.063 7.18 485.931 8.454 485.931 11.1C485.931 13.746 485.063 15.02 483.271 15.02C481.479 15.02 480.611 13.746 480.611 11.086C480.611 8.44 481.465 7.18 483.257 7.18ZM491.692 12.024C492.994 12.024 493.946 10.694 493.946 8.93C493.946 7.18 492.994 5.864 491.692 5.864C490.39 5.864 489.438 7.194 489.438 8.944C489.438 10.708 490.404 12.024 491.692 12.024ZM496.018 13.228C496.018 14.992 496.984 16.308 498.272 16.308C499.574 16.308 500.526 14.978 500.526 13.214C500.526 11.464 499.574 10.148 498.272 10.148C496.97 10.148 496.018 11.478 496.018 13.228ZM491.412 16.28H492.882L498.272 6.48H496.802L491.412 16.28ZM497.166 13.228C497.166 12.136 497.6 11.45 498.272 11.45C498.944 11.45 499.378 12.15 499.378 13.228C499.378 14.306 498.944 15.006 498.272 15.006C497.586 15.006 497.166 14.306 497.166 13.228ZM490.586 8.944C490.586 7.852 491.02 7.166 491.692 7.166C492.364 7.166 492.798 7.866 492.798 8.944C492.798 10.022 492.364 10.722 491.692 10.722C491.006 10.722 490.586 10.022 490.586 8.944Z" fill="black" />
                                     <circle class="chart__line-col " cx="486" cy="39" r="6" fill="#FFAD33" stroke="white" stroke-width="4" />
                                     <defs>
@@ -214,42 +214,99 @@
                 <div class="marquee-wrapper">
                     <div class="marquee-block">
                         <div class="marquee-inner to-left">
-                            <div class="marquee-logos">
-                                <!-- <div class="marquee-item marquee-item--oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> -->
-                                <div class="marquee-item marquee-item--circle">
-                                    <div class="marquee-item-border">
-                                        <img src="img/partners/myforex.svg" class="lazyload" alt="">
+                            <div class="marquee-grid">
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/myforex.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
-                                <div class="marquee-item marquee-item--oval">
-                                    <div class="marquee-item-border">
-                                        <img src="img/partners/vtb-bank.svg" class="lazyload" alt="">
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --oval">
+                                        <img src="img/partners/vtb-bank.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
-                                <div class="marquee-item marquee-item--circle">
-                                    <div class="marquee-item-border">
-                                        <img src="img/partners/icmarket.svg" class="lazyload" alt="">
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/icmarket.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
-                                <div class="marquee-item marquee-item--oval">
-                                    <div class="marquee-item-border">
-                                        <img src="img/partners/alfa-forex.svg" class="lazyload" alt="">
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --oval">
+                                        <img src="img/partners/alfa-forex.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
-                                <div class="marquee-item marquee-item--circle">
-                                    <div class="marquee-item-border">
-                                        <img src="img/partners/ftmo.svg" class="lazyload" alt="">
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/ftmo.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
                             </div>
-                            <div class="marquee-logos">
-                                <!-- <div class="marquee-item marquee-item--oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> -->
-                                <div class="marquee-item marquee-item--circle"><img src="img/partners/myforex.svg" class="lazyload" alt=""></div>
-                                <div class="marquee-item marquee-item--oval"><img src="img/partners/vtb-bank.svg" class="lazyload" alt=""></div>
-                                <div class="marquee-item marquee-item--circle"><img src="img/partners/icmarket.svg" class="lazyload" alt=""></div>
-                                <div class="marquee-item marquee-item--oval"><img src="img/partners/alfa-forex.svg" class="lazyload" alt=""></div>
-                                <div class="marquee-item marquee-item--circle"><img src="img/partners/ftmo.svg" class="lazyload" alt=""></div>
+                            <div class="marquee-grid">
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/myforex.svg" class="marquee-grid-item__img lazyload" alt="">
+                                    </div>
+                                </div>
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --oval">
+                                        <img src="img/partners/vtb-bank.svg" class="marquee-grid-item__img lazyload" alt="">
+                                    </div>
+                                </div>
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/icmarket.svg" class="marquee-grid-item__img lazyload" alt="">
+                                    </div>
+                                </div>
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --oval">
+                                        <img src="img/partners/alfa-forex.svg" class="marquee-grid-item__img lazyload" alt="">
+                                    </div>
+                                </div>
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/ftmo.svg" class="marquee-grid-item__img lazyload" alt="">
+                                    </div>
+                                </div>
                             </div>
+
+
+
+<!--                            <div class="marquee-logos">-->
+<!--                                &lt;!&ndash; <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> &ndash;&gt;-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
+<!--                                    <div class="marquee-item-border">-->
+<!--                                        <img src="img/partners/myforex.svg" class="lazyload" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;oval">-->
+<!--                                    <div class="marquee-item-border">-->
+<!--                                        <img src="img/partners/vtb-bank.svg" class="lazyload" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
+<!--                                    <div class="marquee-item-border">-->
+<!--                                        <img src="img/partners/icmarket.svg" class="lazyload" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;oval">-->
+<!--                                    <div class="marquee-item-border">-->
+<!--                                        <img src="img/partners/alfa-forex.svg" class="lazyload" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
+<!--                                    <div class="marquee-item-border">-->
+<!--                                        <img src="img/partners/ftmo.svg" class="lazyload" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="marquee-logos">-->
+<!--                                &lt;!&ndash; <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> &ndash;&gt;-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/myforex.svg" class="lazyload" alt=""></div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/vtb-bank.svg" class="lazyload" alt=""></div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/icmarket.svg" class="lazyload" alt=""></div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/alfa-forex.svg" class="lazyload" alt=""></div>-->
+<!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/ftmo.svg" class="lazyload" alt=""></div>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -513,7 +570,7 @@
 
                         <div class="cta__image-container">
 
-                            <img class="cta__src" id="arm-animate" src="img/holographic-arm.png" alt="liquid-holographic-arm">
+                            <img class="cta__src" id="arm-animate" src="img/holographic-arm.png" alt="liquid-holographic-arm --show-on-scroll">
                             <!-- <picture class="cta__picture">
                           <source type="image/webp" src="img/cta-car-kvantom.webp" width="" height="" alt="Машина доставки товара">
                           <img class="cta__image" src="img/payment.png" width="" height="" alt="Машина доставки товара">

@@ -325,19 +325,21 @@ let calculate = function(){
   );
 
   // рассчет пипов
-  if (accountCurrency !== currency1) {
-    pipValue = (positionSize * pointValue) / askPrice;
-  } else {
+  if (accountCurrency == currency1) {
+    console.log("валюта аккаунта совпадает с первой валютой");
     pipValue = positionSize * pointValue * askPrice;
+  }
+  else if(accountCurrency == currency2) {
+    console.log("валюта аккаунта совпадает со второй валютой");
+    pipValue = (positionSize * pointValue) / askPrice;
+  }
+  else {
+    console.log("валюта аккаунта не совпадает с валютной парой");
+    pipValue = (positionSize * pointValue) / askPrice * accountCurrencyExchangeRate;
   }
   console.log("посчитанные пипы: " + pipValue);
 
   // перевод в валюту аккаунта
-  if (accountCurrency !== currency1 && accountCurrency !== currency2) {
-    console.log("валюта аккаунта не совпадает с валютной парой");
-    pipValue = pipValue * accountCurrencyExchangeRate;
-    console.log("пересчитанные пипы: " + pipValue);
-  }
 
   //округление
   pipValue = pipValue.toFixed(4);

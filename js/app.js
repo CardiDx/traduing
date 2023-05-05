@@ -1,3 +1,5 @@
+// ЛИБА АНИМАЦИЙ ПО СКРОЛЛУ
+
 AOS.init();
 
 const header = document.querySelector("[data-js-header]");
@@ -257,10 +259,39 @@ selectors.forEach((selector) => {
   selector.remove();
 });
 
+
+// АНИМАЦИИ ПО СКРОЛЛУ
+$(window).scroll(function() {
+  var topOfWindow = $(window).scrollTop() + $(window).innerHeight();
+
+  // анимация чарта
+  if ($("#services").offset().top < topOfWindow) {
+      $(".chart").addClass("--show");
+  }
+
+  // анимация руки
+  if ($("#arm-animate").offset().top < topOfWindow) {
+    $("#arm-animate").addClass("cta__src--animate");
+  }
+});
+// //animate start video
+// var myVideo = document.getElementById("video-example-1");
+
+
+
 // КАЛЬКУЛЯТОР
 
-// рассчет пипов по клику
-$("#calculate").on("click", function () {
+// рейты
+let rates = {};
+
+// функция конвертации
+let convert = function(c1, c2){
+  return rates[c2] / rates[c1];
+}
+
+// функция рассчета
+let calculate = function(){
+
   // переменные из калькулятора
   let currencyPair = $("#currencyPair .cs-selected-option").text();
   let currency1 = currencyPair.split("/")[0];
@@ -269,28 +300,28 @@ $("#calculate").on("click", function () {
   let accountCurrency = $("#accountCurrency .cs-selected-option").text();
 
   // аск прайс из АПИ
-  let askPrice = 1.091595;
+  let askPrice = convert(currency1, currency2);
   // курс обмена на валюту аккаунта из АПИ
-  let accountCurrencyExchangeRate = 1.5;
+  let accountCurrencyExchangeRate = convert(currency2, accountCurrency);
 
   // размер пункта
   let pointValue = 0.0001;
-  if (currency1 === "JPN" || currency2 === "JPN" || accountCurrency === "JPN") {
+  if (currency1 === "JPY" || currency2 === "JPY" || accountCurrency === "JPY") {
     pointValue = 0.01;
   }
 
   // рассчитанные пипы
   let pipValue;
 
-  console.log("===============================================");
-  console.log('нажата кнопка "рассчитать"');
+  console.log("==============================================");
+  console.log('НАЧАЛО РАССЧЕТА');
   console.log("валютная пара: " + currency1 + "/" + currency2);
   console.log("positionSize: " + positionSize);
   console.log("askPrice из апи : " + askPrice);
-  console.log("pointValue, размер пункта: " + pointValue);
   console.log("валюта аккаунта: " + accountCurrency);
+  console.log("pointValue, размер пункта: " + pointValue);
   console.log(
-    "курс обмена на валюту аккаунта из апи: " + accountCurrencyExchangeRate
+      "курс обмена на валюту аккаунта из апи: " + accountCurrencyExchangeRate
   );
 
   // рассчет пипов
@@ -312,26 +343,42 @@ $("#calculate").on("click", function () {
   pipValue = pipValue.toFixed(4);
   console.log("округление пипов: " + pipValue);
 
+  if(pipValue == 0){
+    pipValue = 0.0001;
+    console.log("пипы получились меньше чем 0.0001, так что выставляем это значение");
+  }
+
   // вывод результата
   console.log("PIP VALUE: " + pipValue);
   $("#pipOutput").text(pipValue);
-});
+}
 
+// читаем данные из файла
+$.getJSON('rates.json', function(data) {
+  rates = data;
+  console.log("=============== КУРСЫ ИЗ ФАЙЛА ===============");
+  console.log(rates);
+})
+  .then(function(){
+    // задаем курс доллара под калькулятором
+    $('#current-dollar-course').text( convert("USD", "RUB").toFixed(2) );
 
+    // прогоняет рассчеты один раз
+    calculate();
 
-// АНИМАЦИИ ПО СКРОЛЛУ
-$(window).scroll(function() {
-  var topOfWindow = $(window).scrollTop() + $(window).innerHeight();
+    // внесение Ask Price в поле
+    $("#askPrice").val( convert($("#currencyPair .cs-selected-option").text().split("/")[0], $("#currencyPair .cs-selected-option").text().split("/")[1]) );
 
-  // анимация чарта
-  if ($("#services").offset().top < topOfWindow) {
-      $(".chart").addClass("--show");
-  }
+    // внесение Ask Price в поле при изменении валютной пары
+    $("#currencyPair .cs-selector .cs-option").each(function(){
+      $(this).on("click", function(){
+        $("#askPrice").val( convert($("#currencyPair .cs-selected-option").text().split("/")[0], $("#currencyPair .cs-selected-option").text().split("/")[1]) );
+      });
+    });
 
-  // анимация руки
-  if ($("#arm-animate").offset().top < topOfWindow) {
-    $("#arm-animate").addClass("cta__src--animate");
-  }
-});
-// //animate start video
-// var myVideo = document.getElementById("video-example-1");
+    // рассчет пипов по клику
+    $("#calculate").on("click", function () {
+      calculate();
+    });
+
+  });

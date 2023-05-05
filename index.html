@@ -19,6 +19,7 @@
     <link rel="canonical" href="https://cubdesign.net/">
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="css/main.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--==================== favicon ====================-->
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -477,9 +478,18 @@
                                     <select>
                                         <option class="cs-selector-label">Choose one</option>
                                         <option value="1" selected="selected">EUR/USD</option>
-                                        <option value="2">GBP/USD</option>
-                                        <option value="3">USD/CHF</option>
-                                        <option value="4">USD/CAD</option>
+                                        <option value="2">USD/JPY</option>
+                                        <option value="3">GBP/USD</option>
+                                        <option value="4">AUD/USD</option>
+                                        <option value="5">USD/CAD</option>
+                                        <option value="6">USD/CNY</option>
+                                        <option value="7">USD/CHF</option>
+                                        <option value="8">USD/HKD</option>
+                                        <option value="9">EUR/GBP</option>
+                                        <option value="10">USD/KRW</option>
+                                        <option value="11">USD/RUB</option>
+                                        <option value="12">EUR/RUB</option>
+                                        <option value="13">RUB/CNY</option>
                                     </select>
                                 </div>
                                 <label for="askPrice" class="currency-form__label">ask price</label>
@@ -501,21 +511,26 @@
                                         <option class="cs-selector-label">Choose one</option>
                                         <option value="1" selected="selected">USD</option>
                                         <option value="2">EUR</option>
-                                        <option value="3">JPY</option>
-                                        <option value="4">GBP</option>
+                                        <option value="3">USD</option>
+                                        <option value="4">JPY</option>
+                                        <option value="5">GBP</option>
+                                        <option value="6">AUD</option>
+                                        <option value="7">CAD</option>
+                                        <option value="8">CNY</option>
+                                        <option value="9">CHF</option>
+                                        <option value="10">HKD</option>
+                                        <option value="11">KRW</option>
+                                        <option value="12">RUB</option>
                                     </select>
                                 </div>
-
-
                                 <button id="calculate" class="currency-form__btn button" aria-label="Aria Calculate">Рассчитать</button>
-
                             </div>
                         </div>
                         <div class="currency-pip">
                             <span class="currency-pip__title">Pip value:</span>
                             <span id="pipOutput" class="currency-pip__value">0,0002</span>
                         </div>
-                        <span class="currency-current">текущий курс $ — <span class="--accent">81,87₽</span></span>
+                        <span class="currency-current">текущий курс $ — <span class="--accent"><span id="current-dollar-course">81,87</span>₽</span></span>
                     </div>
                 </div>
 
@@ -687,7 +702,31 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+<!--    <script type="text/javascript">-->
+<!--        // Load exchange rates data via AJAX:-->
+<!--        $.getJSON(-->
+<!--            // NB: using Open Exchange Rates here, but you can use any source!-->
+<!--            'https://openexchangerates.org/api/latest.json?app_id=7254c13874c5453b8bded7444beb2dc2',-->
+<!--            function(data) {-->
+<!--                // Check money.js has finished loading:-->
+<!--                if ( typeof fx !== "undefined" && fx.rates ) {-->
+<!--                    fx.rates = data.rates;-->
+<!--                    fx.base = data.base;-->
+<!--                } else {-->
+<!--                    // If not, apply to fxSetup global:-->
+<!--                    var fxSetup = {-->
+<!--                        rates : data.rates,-->
+<!--                        base : data.base-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
+<!--        );-->
+<!--    </script>-->
+
+<!--    <script src="/js/money.min.js"></script>-->
+
     <script src="/js/app.min.js"></script>
 </body>
 

@@ -108,6 +108,7 @@
   //background: #FFF;
   background: none;
   cursor: pointer;
+
   &[data-selected="1"] .cs-options-list .cs-option:nth-child(2) {
     background: var(--selectedBackground);
     color: var(--selectedColor);
@@ -121,6 +122,50 @@
     color: var(--selectedColor);
   }
   &[data-selected="4"] .cs-options-list .cs-option:nth-child(5) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="5"] .cs-options-list .cs-option:nth-child(6) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="6"] .cs-options-list .cs-option:nth-child(7) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="7"] .cs-options-list .cs-option:nth-child(8) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="8"] .cs-options-list .cs-option:nth-child(9) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="9"] .cs-options-list .cs-option:nth-child(10) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="10"] .cs-options-list .cs-option:nth-child(11) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="11"] .cs-options-list .cs-option:nth-child(12) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="12"] .cs-options-list .cs-option:nth-child(13) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="13"] .cs-options-list .cs-option:nth-child(14) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="14"] .cs-options-list .cs-option:nth-child(15) {
+    background: var(--selectedBackground);
+    color: var(--selectedColor);
+  }
+  &[data-selected="15"] .cs-options-list .cs-option:nth-child(16) {
     background: var(--selectedBackground);
     color: var(--selectedColor);
   }

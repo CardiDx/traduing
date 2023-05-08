@@ -240,7 +240,8 @@
     position: absolute;
     width: 100%;
     border-radius: 5px;
-    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 180px;
   }
   &-selector-label {
     display: none;

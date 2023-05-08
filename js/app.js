@@ -1,7 +1,3 @@
-// ЛИБА АНИМАЦИЙ ПО СКРОЛЛУ
-
-AOS.init();
-
 const header = document.querySelector("[data-js-header]");
 const headerScrolledClass =
   header.getAttribute("data-js-header-scrolled") || "";
@@ -259,14 +255,13 @@ selectors.forEach((selector) => {
   selector.remove();
 });
 
-
 // АНИМАЦИИ ПО СКРОЛЛУ
-$(window).scroll(function() {
+$(window).scroll(function () {
   var topOfWindow = $(window).scrollTop() + $(window).innerHeight();
 
   // анимация чарта
   if ($("#services").offset().top < topOfWindow) {
-      $(".chart").addClass("--show");
+    $(".chart").addClass("--show");
   }
 
   // анимация руки
@@ -277,21 +272,18 @@ $(window).scroll(function() {
 // //animate start video
 // var myVideo = document.getElementById("video-example-1");
 
-
-
 // КАЛЬКУЛЯТОР
 
 // рейты
 let rates = {};
 
 // функция конвертации
-let convert = function(c1, c2){
+let convert = function (c1, c2) {
   return rates[c2] / rates[c1];
-}
+};
 
 // функция рассчета
-let calculate = function(){
-
+let calculate = function () {
   // переменные из калькулятора
   let currencyPair = $("#currencyPair .cs-selected-option").text();
   let currency1 = currencyPair.split("/")[0];
@@ -314,28 +306,27 @@ let calculate = function(){
   let pipValue;
 
   console.log("==============================================");
-  console.log('НАЧАЛО РАССЧЕТА');
+  console.log("НАЧАЛО РАССЧЕТА");
   console.log("валютная пара: " + currency1 + "/" + currency2);
   console.log("positionSize: " + positionSize);
   console.log("askPrice из апи : " + askPrice);
   console.log("валюта аккаунта: " + accountCurrency);
   console.log("pointValue, размер пункта: " + pointValue);
   console.log(
-      "курс обмена на валюту аккаунта из апи: " + accountCurrencyExchangeRate
+    "курс обмена на валюту аккаунта из апи: " + accountCurrencyExchangeRate
   );
 
   // рассчет пипов
   if (accountCurrency == currency1) {
     console.log("валюта аккаунта совпадает с первой валютой");
     pipValue = positionSize * pointValue * askPrice;
-  }
-  else if(accountCurrency == currency2) {
+  } else if (accountCurrency == currency2) {
     console.log("валюта аккаунта совпадает со второй валютой");
     pipValue = (positionSize * pointValue) / askPrice;
-  }
-  else {
+  } else {
     console.log("валюта аккаунта не совпадает с валютной парой");
-    pipValue = (positionSize * pointValue) / askPrice * accountCurrencyExchangeRate;
+    pipValue =
+      ((positionSize * pointValue) / askPrice) * accountCurrencyExchangeRate;
   }
   console.log("посчитанные пипы: " + pipValue);
 
@@ -345,42 +336,65 @@ let calculate = function(){
   pipValue = pipValue.toFixed(4);
   console.log("округление пипов: " + pipValue);
 
-  if(pipValue == 0){
+  if (pipValue == 0) {
     pipValue = 0.0001;
-    console.log("пипы получились меньше чем 0.0001, так что выставляем это значение");
+    console.log(
+      "пипы получились меньше чем 0.0001, так что выставляем это значение"
+    );
   }
 
   // вывод результата
   console.log("PIP VALUE: " + pipValue);
   $("#pipOutput").text(pipValue);
-}
+};
 
 // читаем данные из файла
-$.getJSON('rates.json', function(data) {
+$.getJSON("rates.json", function (data) {
   rates = data;
   console.log("=============== КУРСЫ ИЗ ФАЙЛА ===============");
   console.log(rates);
-})
-  .then(function(){
-    // задаем курс доллара под калькулятором
-    $('#current-dollar-course').text( convert("USD", "RUB").toFixed(2) );
+}).then(function () {
+  // задаем курс доллара под калькулятором
+  $("#current-dollar-course").text(convert("USD", "RUB").toFixed(2));
 
-    // прогоняет рассчеты один раз
-    calculate();
+  // прогоняет рассчеты один раз
+  calculate();
 
-    // внесение Ask Price в поле
-    $("#askPrice").val( convert($("#currencyPair .cs-selected-option").text().split("/")[0], $("#currencyPair .cs-selected-option").text().split("/")[1]) );
+  // внесение Ask Price в поле
+  $("#askPrice").val(
+    convert(
+      $("#currencyPair .cs-selected-option").text().split("/")[0],
+      $("#currencyPair .cs-selected-option").text().split("/")[1]
+    )
+  );
 
-    // внесение Ask Price в поле при изменении валютной пары
-    $("#currencyPair .cs-selector .cs-option").each(function(){
-      $(this).on("click", function(){
-        $("#askPrice").val( convert($("#currencyPair .cs-selected-option").text().split("/")[0], $("#currencyPair .cs-selected-option").text().split("/")[1]) );
-      });
+  // внесение Ask Price в поле при изменении валютной пары
+  $("#currencyPair .cs-selector .cs-option").each(function () {
+    $(this).on("click", function () {
+      $("#askPrice").val(
+        convert(
+          $("#currencyPair .cs-selected-option").text().split("/")[0],
+          $("#currencyPair .cs-selected-option").text().split("/")[1]
+        )
+      );
     });
-
-    // рассчет пипов по клику
-    $("#calculate").on("click", function () {
-      calculate();
-    });
-
   });
+
+  // рассчет пипов по клику
+  $("#calculate").on("click", function () {
+    calculate();
+  });
+});
+
+// ЛИБА АНИМАЦИЙ ПО СКРОЛЛУ
+
+if (window.innerWidth < 576) {
+  function removeAos() {
+    var elem = document.getElementById("aos-css-file");
+    elem.parentNode.removeChild(elem);
+    return false;
+  }
+  removeAos();
+}
+
+AOS.init();

@@ -40,7 +40,7 @@ function scripts() {
     // "node_modules/jquery/dist/jquery.js",
     "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
     // "node_modules/swiper/swiper-bundle.js",
-    "node_modules/aos/dist/aos.js",
+    // "node_modules/aos/dist/aos.js",
     "js/app.js",
   ])
     .pipe(concat("app.min.js"))

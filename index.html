@@ -19,7 +19,7 @@
     <link rel="canonical" href="https://cubdesign.net/">
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="css/main.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link id="aos-css-file" href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--==================== favicon ====================-->
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -127,8 +127,12 @@
 
                     <div class="container container--no-gap">
                         <div class="troubles__image">
-                            <video class="troubles__src" src="/img/generate-man.mp4" poster="" autoplay="" loop="" muted="" playsinline=""></video>
+                            <video class="troubles__src" poster="/img/generate-man--poster.png" autoplay="" loop="" muted="" playsinline="">
+                                <source src="/img/generate-man.mp4" type='video/mp4'>
+                            </video>
                         </div>
+
+
 
                         <div class="troubles__content-text">
                             <ul class="troubles__list font-body">
@@ -324,42 +328,42 @@
 
 
 
-<!--                            <div class="marquee-logos">-->
-<!--                                &lt;!&ndash; <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> &ndash;&gt;-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
-<!--                                    <div class="marquee-item-border">-->
-<!--                                        <img src="img/partners/myforex.svg" class="lazyload" alt="">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;oval">-->
-<!--                                    <div class="marquee-item-border">-->
-<!--                                        <img src="img/partners/vtb-bank.svg" class="lazyload" alt="">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
-<!--                                    <div class="marquee-item-border">-->
-<!--                                        <img src="img/partners/icmarket.svg" class="lazyload" alt="">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;oval">-->
-<!--                                    <div class="marquee-item-border">-->
-<!--                                        <img src="img/partners/alfa-forex.svg" class="lazyload" alt="">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
-<!--                                    <div class="marquee-item-border">-->
-<!--                                        <img src="img/partners/ftmo.svg" class="lazyload" alt="">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="marquee-logos">-->
-<!--                                &lt;!&ndash; <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> &ndash;&gt;-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/myforex.svg" class="lazyload" alt=""></div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/vtb-bank.svg" class="lazyload" alt=""></div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/icmarket.svg" class="lazyload" alt=""></div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/alfa-forex.svg" class="lazyload" alt=""></div>-->
-<!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/ftmo.svg" class="lazyload" alt=""></div>-->
-<!--                            </div>-->
+                            <!--                            <div class="marquee-logos">-->
+                            <!--                                &lt;!&ndash; <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> &ndash;&gt;-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
+                            <!--                                    <div class="marquee-item-border">-->
+                            <!--                                        <img src="img/partners/myforex.svg" class="lazyload" alt="">-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;oval">-->
+                            <!--                                    <div class="marquee-item-border">-->
+                            <!--                                        <img src="img/partners/vtb-bank.svg" class="lazyload" alt="">-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
+                            <!--                                    <div class="marquee-item-border">-->
+                            <!--                                        <img src="img/partners/icmarket.svg" class="lazyload" alt="">-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;oval">-->
+                            <!--                                    <div class="marquee-item-border">-->
+                            <!--                                        <img src="img/partners/alfa-forex.svg" class="lazyload" alt="">-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;circle">-->
+                            <!--                                    <div class="marquee-item-border">-->
+                            <!--                                        <img src="img/partners/ftmo.svg" class="lazyload" alt="">-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="marquee-logos">-->
+                            <!--                                &lt;!&ndash; <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/tradingview.svg" class="lazyload" alt=""></div> &ndash;&gt;-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/myforex.svg" class="lazyload" alt=""></div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/vtb-bank.svg" class="lazyload" alt=""></div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/icmarket.svg" class="lazyload" alt=""></div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;oval"><img src="img/partners/alfa-forex.svg" class="lazyload" alt=""></div>-->
+                            <!--                                <div class="marquee-item marquee-item&#45;&#45;circle"><img src="img/partners/ftmo.svg" class="lazyload" alt=""></div>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -704,29 +708,29 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 
-<!--    <script type="text/javascript">-->
-<!--        // Load exchange rates data via AJAX:-->
-<!--        $.getJSON(-->
-<!--            // NB: using Open Exchange Rates here, but you can use any source!-->
-<!--            'https://openexchangerates.org/api/latest.json?app_id=7254c13874c5453b8bded7444beb2dc2',-->
-<!--            function(data) {-->
-<!--                // Check money.js has finished loading:-->
-<!--                if ( typeof fx !== "undefined" && fx.rates ) {-->
-<!--                    fx.rates = data.rates;-->
-<!--                    fx.base = data.base;-->
-<!--                } else {-->
-<!--                    // If not, apply to fxSetup global:-->
-<!--                    var fxSetup = {-->
-<!--                        rates : data.rates,-->
-<!--                        base : data.base-->
-<!--                    }-->
-<!--                }-->
-<!--            }-->
-<!--        );-->
-<!--    </script>-->
+    <!--    <script type="text/javascript">-->
+    <!--        // Load exchange rates data via AJAX:-->
+    <!--        $.getJSON(-->
+    <!--            // NB: using Open Exchange Rates here, but you can use any source!-->
+    <!--            'https://openexchangerates.org/api/latest.json?app_id=7254c13874c5453b8bded7444beb2dc2',-->
+    <!--            function(data) {-->
+    <!--                // Check money.js has finished loading:-->
+    <!--                if ( typeof fx !== "undefined" && fx.rates ) {-->
+    <!--                    fx.rates = data.rates;-->
+    <!--                    fx.base = data.base;-->
+    <!--                } else {-->
+    <!--                    // If not, apply to fxSetup global:-->
+    <!--                    var fxSetup = {-->
+    <!--                        rates : data.rates,-->
+    <!--                        base : data.base-->
+    <!--                    }-->
+    <!--                }-->
+    <!--            }-->
+    <!--        );-->
+    <!--    </script>-->
 
-<!--    <script src="/js/money.min.js"></script>-->
-
+    <!--    <script src="/js/money.min.js"></script>-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/app.min.js"></script>
 </body>
 

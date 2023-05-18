@@ -138,7 +138,7 @@
                                 <li data-aos="zoom-in-left" class="troubles__list-bg">Нет постоянства в результатах</li>
                                 <li data-aos="zoom-in-right">Нет системного подхода</li>
                                 <li data-aos="zoom-in-right">Нет четких правил торговли</li>
-                                <li data-aos="zoom-in-left" class="troubles__list-bg">Нет понимания, когда торговать нельзя</li>
+                                <li data-aos="zoom-in-left" class="troubles__list-bg">нет уверенности в сделках</li>
                                 <li data-aos="zoom-in-left" class="troubles__list-bg">Постоянная погоня за ценой</li>
                                 <li data-aos="zoom-in-right">Нет выстроенной системы риск-менеджмента</li>
                             </ul>
@@ -159,8 +159,8 @@
 
                     <div class="container">
                         <div class="services__wrapper-text font-body" data-aos="fade-right">
-                            <p class="services__desc">Торгуете ли вы сейчас на демо-счете или небольшом личном счете, никогда не принимали и не проходили испытания финансированием, или вы успешно получили финансирование через реквизиторскую фирму, но завалили свой</p>
-                            <p class="services__desc">мы здесь, чтобы помочь! Наша цель - помочь вам найти последовательность, получить финансирование и, что самое главное, помочь вам сохранить его!</p>
+                            <p class="services__desc">Независимо от того, торгуете вы на демо-счете или используете небольшой личный счет, проходили вы челлендж или использовали средства инвесторов; имеете положительный или вовсе негативный опыт… мы здесь, чтобы помочь вам!</p>
+                            <p class="services__desc">Наша цель – создать трейдеров, способных правильно анализировать графики и извлекать выгоду, применяя полученные знания.</p>
                         </div>
 
                         <div class="wrap-chart">
@@ -299,23 +299,24 @@
                             </div>
                             <div class="marquee-grid">
                                 <div class="marquee-grid-item">
-                                    <div class="marquee-grid-item__img-wrapper --circle">
-                                        <img src="img/partners/myforex.svg" class="marquee-grid-item__img lazyload" alt="">
-                                    </div>
-                                </div>
-                                <div class="marquee-grid-item">
                                     <div class="marquee-grid-item__img-wrapper --oval">
                                         <img src="img/partners/vtb-bank.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
                                 <div class="marquee-grid-item">
                                     <div class="marquee-grid-item__img-wrapper --circle">
-                                        <img src="img/partners/icmarket.svg" class="marquee-grid-item__img lazyload" alt="">
+                                        <img src="img/partners/myforex.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
+
                                 <div class="marquee-grid-item">
                                     <div class="marquee-grid-item__img-wrapper --oval">
                                         <img src="img/partners/alfa-forex.svg" class="marquee-grid-item__img lazyload" alt="">
+                                    </div>
+                                </div>
+                                <div class="marquee-grid-item">
+                                    <div class="marquee-grid-item__img-wrapper --circle">
+                                        <img src="img/partners/icmarket.svg" class="marquee-grid-item__img lazyload" alt="">
                                     </div>
                                 </div>
                                 <div class="marquee-grid-item">
@@ -413,11 +414,27 @@
                                     <p>Формирование собственного сетапа</p>
                                     <p>Построение системы риск-менеджмента</p>
                                     <p>Анализ текущих ситуаций на рынке</p>
+                                    <p>Возможность присоединиться к закрытому чату прибыльных трейдеров</p>
+                                </div>
+                            </label>
+                            <label class="accordion" aria-expanded="false">
+                                <input class="accordion__checkbox" type='checkbox' name='checkbox-accordion' id="iplan">
+                                <div class="accordion__header">
+                                    <span class="accordion__header-text">Индивидуальный план</span>
+                                    <span class="accordion__header-icon icon icon--plus"></span>
+                                </div>
+                                <div class="accordion__content font-body">
+                                    <p>Применение изученной логики</p>
+                                    <p>Формирование собственного сетапа</p>
+                                    <p>Построение системы риск-менеджмента</p>
+                                    <p>Анализ текущих ситуаций на рынке</p>
+                                    <p>Возможность присоединиться к закрытому чату прибыльных трейдеров</p>
                                 </div>
                             </label>
 
+
                             <div class="faq__content-price">
-                                <div class="faq__content-price-text">50 000 ₽ / МЕС.</div>
+                                <div class="faq__content-price-text" id="priceStudy">50 000 ₽ / МЕС.</div>
                                 <a href="#" class="faq__content-price-button button">Купить <span class="button__icon icon icon--shopping-cart"></span></a>
                             </div>
                         </div>
@@ -476,7 +493,7 @@
                                 <!--                                <div class="currency-form__input-wrapper">-->
                                 <!--                                    <input type="text" name="currency" id="currencyPair" class="currency-form__input" placeholder="EUR/USD">-->
                                 <!--                                </div>-->
-                                <label class="currency-form__label">Account currency</label>
+                                <label class="currency-form__label">Валютная пара</label>
                                 <div id="currencyPair" class="currency-form__input-wrapper">
                                     <select>
                                         <option class="cs-selector-label">Choose one</option>
@@ -495,11 +512,11 @@
                                         <option value="13">RUB/CNY</option>
                                     </select>
                                 </div>
-                                <label for="askPrice" class="currency-form__label">ask price</label>
+                                <label for="askPrice" class="currency-form__label">Цена</label>
                                 <div class="currency-form__input-wrapper">
                                     <input type="text" name="currency" id="askPrice" class="currency-form__input" placeholder="1,091595" disabled>
                                 </div>
-                                <label for="positionSize" class="currency-form__label">Position Size (units)</label>
+                                <label for="positionSize" class="currency-form__label">Сумма сделки</label>
                                 <div class="currency-form__input-wrapper">
                                     <input type="number" name="currency" id="positionSize" class="currency-form__input" placeholder="1" value="1" min="1">
                                 </div>
@@ -508,7 +525,7 @@
                                 <!--                                    <input type="text" name="currency" id="accountCurrency" class="currency-form__input" placeholder="USD" value="USD">-->
                                 <!--                                </div>-->
 
-                                <label class="currency-form__label">Account currency</label>
+                                <label class="currency-form__label">Валюта счета</label>
                                 <div id="accountCurrency" class="currency-form__input-wrapper">
                                     <select>
                                         <option class="cs-selector-label">Choose one</option>
@@ -555,7 +572,7 @@
                             <div class="social__wrap-image">
                                 <img class="social__src" src="img/phone-diskord.png" alt="mockup-iphone-with-diskord" data-aos="flip-left" data-aos-duration="1000">
                                 <div class="social__buttons" data-aos="fade-up" data-aos-duration="1500">
-                                    <a href="#" class="social__buttons-button button discord" aria-label="Link discord"><span class="social__buttons-icon button__icon icon icon--discord"></span><span>Discord </span></a>
+                                    <!-- <a href="#" class="social__buttons-button button discord" aria-label="Link discord"><span class="social__buttons-icon button__icon icon icon--discord"></span><span>Discord </span></a> -->
                                     <a href="#" class="social__buttons-button button telegram" aria-label="Link telegram"><span class="social__buttons-icon button__icon icon icon--tg-circle"></span><span>Telegram </span></a>
                                 </div>
                             </div>
@@ -578,8 +595,8 @@
                         <div class="faq__content--left" data-aos="fade-right">
                             <ul class="faq__list">
                                 <li class="faq__item">
-                                    <h3 class="faq__item-title">1. Как быстро я могу приступить к изучению материала?</h3>
-                                    <p class="faq__item-desc font-body">После подтвержденной оплаты, мы сразу свяжемся с вами.</p>
+                                    <h3 class="faq__item-title">1. Насколько быстро я смогу приступить к изучению материала?</h3>
+                                    <p class="faq__item-desc font-body">После подтверждения оплаты мы сразу свяжемся с вами.</p>
                                 </li>
                                 <li class="faq__item">
                                     <h3 class="faq__item-title">2. где проходят занятия?</h3>
@@ -587,8 +604,7 @@
                                 </li>
                                 <li class="faq__item">
                                     <h3 class="faq__item-title">3. Как часто проходят занятия?</h3>
-                                    <p class="faq__item-desc font-body">Занятия проходят 1 раз в неделю. Время обговаривается в группе. Ориентировочная продолжительность занятия: 1 час.</p>
-                                    <p class="faq__item-desc font-body">Всегда освобождайте еще минимум 15 минут, поскольку у вас могут остаться вопросы по материалам.</p>
+                                    <p class="faq__item-desc font-body">Занятия проходят 1 раз в неделю. 1 раз в неделю. Ориентировочная продолжительность 1 час.</p>
                                 </li>
                             </ul>
                         </div>
@@ -597,7 +613,7 @@
                             <ul class="faq__list">
                                 <li class="faq__item">
                                     <h3 class="faq__item-title">4. Что делать, если я не успеваю к назначенному времени?</h3>
-                                    <p class="faq__item-desc font-body">Занятия будут записаны. Вы сможете пересмотреть запись в удобное для вас время.</p>
+                                    <p class="faq__item-desc font-body">Занятия будут записаны. Вы сможете посмотреть запись в удобное для вас время</p>
                                 </li>
                                 <li class="faq__item">
                                     <h3 class="faq__item-title">5. Когда у меня появится доступ к закрытому чату?</h3>
@@ -609,8 +625,6 @@
                                 </li>
                             </ul>
                         </div>
-
-
 
                     </div>
                 </div>
@@ -707,28 +721,27 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 
-    <!--    <script type="text/javascript">-->
-    <!--        // Load exchange rates data via AJAX:-->
-    <!--        $.getJSON(-->
-    <!--            // NB: using Open Exchange Rates here, but you can use any source!-->
-    <!--            'https://openexchangerates.org/api/latest.json?app_id=7254c13874c5453b8bded7444beb2dc2',-->
-    <!--            function(data) {-->
-    <!--                // Check money.js has finished loading:-->
-    <!--                if ( typeof fx !== "undefined" && fx.rates ) {-->
-    <!--                    fx.rates = data.rates;-->
-    <!--                    fx.base = data.base;-->
-    <!--                } else {-->
-    <!--                    // If not, apply to fxSetup global:-->
-    <!--                    var fxSetup = {-->
-    <!--                        rates : data.rates,-->
-    <!--                        base : data.base-->
-    <!--                    }-->
-    <!--                }-->
-    <!--            }-->
-    <!--        );-->
-    <!--    </script>-->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    <!--    <script src="/js/money.min.js"></script>-->
+        ym(93569417, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93569417" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/app.min.js"></script>
 </body>

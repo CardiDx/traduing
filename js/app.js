@@ -397,4 +397,14 @@ if (window.innerWidth < 576) {
   removeAos();
 }
 
+//
+var inputCheck = $("#iplan");
+var price = $("#priceStudy");
+
+inputCheck.on("click", function () {
+  if (inputCheck.is(":checked")) {
+    price.text("110 000 ₽ / МЕС.");
+  } else price.text("50 000 ₽ / МЕС.");
+});
+
 AOS.init();

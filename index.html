@@ -431,7 +431,7 @@
 
                             <div class="faq__content-price">
                                 <div class="faq__content-price-text" id="priceStudy">55 000 ₽ / МЕС.</div>
-                                <a href="#" class="faq__content-price-button button">Купить <span class="button__icon icon icon--shopping-cart"></span></a>
+                                <a href="#" class="faq__content-price-button button show-payment-popup">Купить <span class="button__icon icon icon--shopping-cart"></span></a>
                             </div>
                         </div>
 
@@ -712,6 +712,87 @@
             <span class="popup__subtitle">Чек-лист придет на почту которую вы указали ранее</span>
         </div>
     </div>
+
+    <!--==================== Payment popup ====================-->
+    <div class="popup popup--payment mfp-hide" id="payment">
+        <div class="popup-content popup-content--payment">
+            <div class="popup-payment__title">Заполните данные о заказе</div>
+<!--            <span class="popup__subtitle">Пожалуйста, попробуйте позже</span>-->
+
+            <form name="TinkoffPayForm" class="currency-form --payment" onsubmit="pay(this); return false;">
+                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1684576749177DEMO">
+                <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
+                <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
+                <input class="tinkoffPayRow currency-form__input" type="hidden" name="receipt" value="">
+                <input id="orderNumber" class="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" value="">
+
+                <input id="descr" class="tinkoffPayRow" type="hidden" placeholder="Описание заказа" name="description" required value="Групповой план">
+                <span class="currency-form__label">Выберите план</span>
+                <div class="payment-switch">
+                    <div id="payment-switch-group" class="payment-switch__btn --active">Групповой</div>
+                    <div id="payment-switch-solo" class="payment-switch__btn">Индивидуальный</div>
+                </div>
+
+                <label for="price" class="currency-form__label">Цена</label>
+                <div class="currency-form__input-wrapper">
+                    <input id="price" class="tinkoffPayRow currency-form__input" type="text" placeholder="Сумма заказа" name="amount" required value="55000" disabled>
+                </div>
+
+                <label for="name" class="currency-form__label">ФИО плательщика *</label>
+                <div class="currency-form__input-wrapper">
+                    <input id="name" class="tinkoffPayRow currency-form__input" type="text" placeholder="ФИО плательщика" name="name" value="" required>
+                </div>
+
+                <label for="email" class="currency-form__label">E-mail *</label>
+                <div class="currency-form__input-wrapper">
+                    <input id="email" class="tinkoffPayRow currency-form__input" type="email" placeholder="E-mail" name="email" value="" required>
+                </div>
+
+                <label for="phone" class="currency-form__label">Номер телефона *</label>
+                <div class="currency-form__input-wrapper">
+                    <input id="phone" class="tinkoffPayRow currency-form__input" type="text" placeholder="Контактный телефон" name="phone" value="" required>
+                </div>
+
+<!--                <button id="calculate" class="currency-form__btn button" aria-label="Aria Calculate">Рассчитать</button>-->
+                <input class="tinkoffPayRow currency-form__btn button" type="button" onclick="tinkoffPayFunction(this)"  value="Оплатить">
+            </form>
+        </div>
+    </div>
+
+    <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+
+    <script type="text/javascript">
+        function tinkoffPayFunction(target) {
+            $.magnificPopup.close();
+            let form = target.parentElement;
+            let name = form.description.value || "Оплата";
+            let amount = form.amount.value;
+            let email = form.email.value;
+            let phone = form.phone.value;
+
+            if (amount && email && phone) {
+                form.receipt.value = JSON.stringify({
+                    "Email": email,
+                    "Phone": phone,
+                    "EmailCompany": "mail@mail.com",
+                    "Taxation": "patent",
+                    "Items": [
+                        {
+                            "Name": name,
+                            "Price": amount + '00',
+                            "Quantity": 1.00,
+                            "Amount": amount + '00',
+                            "PaymentMethod": "full_prepayment",
+                            "PaymentObject": "service",
+                            "Tax": "none"
+                        }
+                    ]
+                });
+                pay(form);
+            } else alert("Не все обязательные поля заполнены")
+            return false;
+        }
+    </script>
 
     <!--==================== MAIN JS ====================-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>

@@ -45,6 +45,42 @@ headerLinks.forEach(function (headerLink) {
   });
 });
 
+
+// set default order number
+$('#orderNumber').val($.now());
+
+// payment popup
+$(".show-payment-popup").on('click', function(e){
+  e.preventDefault();
+  $('#orderNumber').val($.now());
+
+  $.magnificPopup.open({
+    items: {
+      src: "#payment",
+    },
+    type: "inline",
+    mainClass: "my-mfp-slide-bottom",
+    closeOnBgClick: true,
+    fixedContentPos: false,
+  });
+});
+
+// click on group switch in popup
+$('#payment-switch-group').on('click', function (){
+  $('#payment-switch-group').addClass('--active');
+  $('#payment-switch-solo').removeClass('--active');
+  $('#descr').val('Групповой план');
+  $('#price').val('55000');
+});
+
+// click on solo switch in popup
+$('#payment-switch-solo').on('click', function (){
+  $('#payment-switch-group').removeClass('--active');
+  $('#payment-switch-solo').addClass('--active');
+  $('#descr').val('Индивидуальный план');
+  $('#price').val('110000');
+});
+
 //wa parallax
 
 // // popups
@@ -404,7 +440,7 @@ var price = $("#priceStudy");
 inputCheck.on("click", function () {
   if (inputCheck.is(":checked")) {
     price.text("110 000 ₽ / МЕС.");
-  } else price.text("50 000 ₽ / МЕС.");
+  } else price.text("55 000 ₽ / МЕС.");
 });
 
 AOS.init();

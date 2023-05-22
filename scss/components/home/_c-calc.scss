@@ -130,6 +130,11 @@
 .currency-form {
   position: relative;
   z-index: 2;
+
+  &.--payment {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .currency-form__label {

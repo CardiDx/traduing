@@ -417,16 +417,16 @@
                                     <p>Возможность присоединиться к закрытому чату прибыльных трейдеров</p>
                                 </div>
                             </label>
-                            <label class="accordion" aria-expanded="false">
-                                <input class="accordion__checkbox" type='checkbox' name='checkbox-accordion' id="iplan">
-                                <div class="accordion__header">
-                                    <span class="accordion__header-text">Индивидуальный план</span>
-                                    <span class="accordion__header-icon icon icon--plus"></span>
-                                </div>
-                                <div class="accordion__content font-body">
-                                    <p>По вопросам индивидуальных занятий - напишите нам в Telegram</p>
-                                </div>
-                            </label>
+<!--                            <label class="accordion" aria-expanded="false">-->
+<!--                                <input class="accordion__checkbox" type='checkbox' name='checkbox-accordion' id="iplan">-->
+<!--                                <div class="accordion__header">-->
+<!--                                    <span class="accordion__header-text">Индивидуальный план</span>-->
+<!--                                    <span class="accordion__header-icon icon icon&#45;&#45;plus"></span>-->
+<!--                                </div>-->
+<!--                                <div class="accordion__content font-body">-->
+<!--                                    <p>По вопросам индивидуальных занятий - напишите нам в Telegram</p>-->
+<!--                                </div>-->
+<!--                            </label>-->
 
 
                             <div class="faq__content-price">
@@ -457,7 +457,7 @@
                 <img src="img/golden-euro-coin-3d-render-illustration.png" alt="euro" class="currency__img --bottom-right" data-aos="fade-left" data-aos-duration="1000">
                 <div class="calc__inner">
                     <div class="heading calc__haeding" data-aos="fade-down">
-                        <span class="heading__subtitle">// гарантии</span>
+                        <span class="heading__subtitle">// калькулятор</span>
                         <h2 class="heading__title">Сколько зарабатываем в пипсах</h2>
                     </div>
                     <div class="currency">
@@ -720,7 +720,7 @@
 <!--            <span class="popup__subtitle">Пожалуйста, попробуйте позже</span>-->
 
             <form name="TinkoffPayForm" class="currency-form --payment" onsubmit="pay(this); return false;">
-                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1684576749177DEMO">
+                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1684576749177">
                 <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
                 <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
                 <input class="tinkoffPayRow currency-form__input" type="hidden" name="receipt" value="">
@@ -735,6 +735,7 @@
 
                 <label for="price" class="currency-form__label">Цена</label>
                 <div class="currency-form__input-wrapper">
+<!--                    <input id="price" class="tinkoffPayRow currency-form__input" type="text" placeholder="Сумма заказа" name="amount" required value="55000" disabled>-->
                     <input id="price" class="tinkoffPayRow currency-form__input" type="text" placeholder="Сумма заказа" name="amount" required value="55000" disabled>
                 </div>
 

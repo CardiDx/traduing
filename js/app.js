@@ -434,13 +434,13 @@ if (window.innerWidth < 576) {
 }
 
 //
-var inputCheck = $("#iplan");
-var price = $("#priceStudy");
-
-inputCheck.on("click", function () {
-  if (inputCheck.is(":checked")) {
-    price.text("110 000 ₽ / МЕС.");
-  } else price.text("55 000 ₽ / МЕС.");
-});
+// var inputCheck = $("#iplan");
+// var price = $("#priceStudy");
+//
+// inputCheck.on("click", function () {
+//   if (inputCheck.is(":checked")) {
+//     price.text("110 000 ₽ / МЕС.");
+//   } else price.text("55 000 ₽ / МЕС.");
+// });
 
 AOS.init();

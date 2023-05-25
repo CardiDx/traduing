@@ -1,10 +1,22 @@
 <?php
 
+// add email address to file
+$email = $_POST['email'];
+$jsonString = file_get_contents('emails.json');
+$data = json_decode($jsonString, true);
+
+if (!in_array($email, $data)){
+    array_push($data, $email);
+}
+
+$newJsonString = json_encode($data);
+file_put_contents('emails.json', $newJsonString);
+
+
+// send mail
 require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
-
-$email = $_POST['email'];
 
 $mail->SMTPDebug = 3; // Enable verbose debug output
 
@@ -21,9 +33,10 @@ $mail->setFrom('mm-trading@mail.ru'); // от кого будет уходить
 $mail->addAddress($email); // Кому будет уходить письмо
 $mail->isHTML(true); // Set email format to HTML
 
-$mail->Subject = 'PDF-гайд с сайта mm-trading.ru';
-//$mail->Body    = 'Имя клиента: ' .$name . ' <br> Телефон: ' .$phone. '<br>Тип услуги: ' .$service;
-$mail->Body    = 'Ваш емейл: ' .$email;
+$mail->Subject = 'Добро пожаловать в MM-Trading!';
+$mail->Body    = 'Добро пожаловать в MM-Trading</br>
+Посетить наш сайт Вы можете по ссылке <a href="https://mm-trading.ru/">https://mm-trading.ru/</a>';
+$mail->Body    = 'Просим Вас ознакомиться с чек-листом обучения';
 $mail->AddAttachment("guide.pdf"); // pdf file path
 $mail->AltBody = '';
 

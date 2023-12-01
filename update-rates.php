@@ -16,7 +16,7 @@ $oxr_latest = json_decode($json, true);
 
 if(!isset($oxr_latest['error']) && isset($oxr_latest['rates']) && is_array($oxr_latest['rates']) && !empty($oxr_latest['rates'])){
     $json_string = json_encode($oxr_latest['rates'], JSON_PRETTY_PRINT);
-    $path = 'mm-trading/public_html/rates.json';
+    $path = './rates.json';
 
     $fp = fopen($path, 'w');
     fwrite($fp, $json_string);

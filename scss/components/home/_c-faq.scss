@@ -150,3 +150,12 @@
     margin-bottom: 0;
   }
 }
+
+.faq__item-desc a,
+.faq__item-desc a:hover,
+.faq__item-desc a:active,
+.faq__item-desc a:visited,
+.faq__item-desc a:focus {
+  color: $color-medium-emphasis;
+  text-decoration: underline;
+}

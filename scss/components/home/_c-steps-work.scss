@@ -223,6 +223,12 @@
 .social__buttons-button.button:hover .icon {
   background-color: $color-white;
 }
+.social__buttons-button.button.youtube {
+  background-color: #ff0000;
+}
+.social__buttons-button.button.youtube:hover {
+  background-color: darken(#ff0000, 10%);
+}
 
 .social__buttons-icon {
   width: 4.8rem;

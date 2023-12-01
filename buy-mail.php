@@ -2,16 +2,10 @@
 
 // add email address to file
 $email = $_POST['email'];
-$jsonString = file_get_contents('emails.json');
-$data = json_decode($jsonString, true);
 
-if (!in_array($email, $data)){
-    array_push($data, $email);
-}
-
-$newJsonString = json_encode($data);
-file_put_contents('emails.json', $newJsonString);
-
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
 
 // send mail
 require_once('phpmailer/PHPMailerAutoload.php');
@@ -30,14 +24,15 @@ $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
 $mail->setFrom('mm-trading@mail.ru'); // от кого будет уходить письмо?
-$mail->addAddress($email); // Кому будет уходить письмо
+$mail->addAddress('mm-trading@mail.ru'); // Кому будет уходить письмо
 $mail->isHTML(true); // Set email format to HTML
 
-$mail->Subject = 'Добро пожаловать в MM-Trading!';
-$mail->Body    = 'MM-Trading</br>
-// Посетить наш сайт Вы можете по ссылке <a href="https://mm-trading.ru/">https://mm-trading.ru/</a>';
-// $mail->Body    = 'Просим Вас ознакомиться с чек-листом обучения</br>';
-$mail->AddAttachment("guide.pdf"); // pdf file path
+$mail->Subject = 'Заказ на MM-Trading!';
+$mail->Body    = '<h2>Заказ на MM-Trading</h2>' . 
+                 '<p>Цена: ' . $_POST['amountVal'] . '</p>' .
+                 '<p>Имя: ' . $_POST['name'] . '</p>' .
+                 '<p>Мейл: ' . $_POST['email'] . '</p>' .
+                 '<p>Телефон: ' . $_POST['phone'] . '</p>';
 $mail->AltBody = '';
 
 if(!$mail->send()) {

@@ -58,6 +58,12 @@
     background-color: $color-white;
   }
 
+  &--youtube {
+    mask-image: url(/img/icons/icon-youtube.svg);
+    -webkit-mask-image: url(/img/icons/icon-youtube.svg);
+    background-color: $color-white;
+  }
+
   &--tg-circle {
     mask-image: url(/img/icons/icon-tg-circle.svg);
     -webkit-mask-image: url(/img/icons/icon-tg-circle.svg);

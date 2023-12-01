@@ -70,7 +70,8 @@ $('#payment-switch-group').on('click', function (){
   $('#payment-switch-group').addClass('--active');
   $('#payment-switch-solo').removeClass('--active');
   $('#descr').val('Групповой план');
-  $('#price').val('55000');
+  $('#price').val('50000');
+  $('#priceVal').val('50000');
 });
 
 // click on solo switch in popup
@@ -78,7 +79,8 @@ $('#payment-switch-solo').on('click', function (){
   $('#payment-switch-group').removeClass('--active');
   $('#payment-switch-solo').addClass('--active');
   $('#descr').val('Индивидуальный план');
-  $('#price').val('110000');
+  $('#price').val('100000');
+  $('#priceVal').val('100000');
 });
 
 //wa parallax
@@ -142,6 +144,67 @@ $("#main-form").submit(function (e) {
   $.ajax({
     type: "POST",
     url: "mail.php",
+    data: $(this).serialize(),
+  })
+    .done(function () {
+      $(this).find("input").val("");
+
+      console.log("sent");
+
+      $.magnificPopup.open({
+        items: {
+          src: "#thankyou",
+        },
+        closeOnBgClick: true,
+        fixedContentPos: false,
+        callbacks: {
+          open: function () {
+            jQuery("body").addClass("noscroll");
+          },
+          close: function () {
+            jQuery("body").removeClass("noscroll");
+          },
+        },
+        removalDelay: 300,
+        mainClass: "mfp-letter my-mfp-slide-bottom",
+      });
+    })
+    .fail(function () {
+      $(this).find("input").val("");
+
+      console.log("mail error");
+
+      $.magnificPopup.open({
+        items: {
+          src: "#mail-error",
+        },
+        closeOnBgClick: true,
+        fixedContentPos: false,
+        callbacks: {
+          open: function () {
+            jQuery("body").addClass("noscroll");
+          },
+          close: function () {
+            jQuery("body").removeClass("noscroll");
+          },
+        },
+        removalDelay: 300,
+        mainClass: "mfp-letter my-mfp-slide-bottom",
+      });
+    });
+
+  return false;
+});
+
+// BUY MAIL
+$("#buy-form").submit(function (e) {
+  e.preventDefault();
+  console.log("sending");
+  // console.log($(this).serialize());
+
+  $.ajax({
+    type: "POST",
+    url: "buy-mail.php",
     data: $(this).serialize(),
   })
     .done(function () {
